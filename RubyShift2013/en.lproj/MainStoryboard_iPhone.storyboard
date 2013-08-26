@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-128" y="60"/>
         </scene>
-        <!--Ruby Shift2013 Agenda View Controller - Agenda-->
+        <!--Ruby Shift2013 Agenda View Controller-->
         <scene sceneID="7Mc-Bb-HUi">
             <objects>
                 <tableViewController id="KqJ-bO-RZx" customClass="RubyShift2013AgendaViewController" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aRl-Hs-73W">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AgendaCell" id="aRl-Hs-73W">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -44,7 +44,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Agenda" id="z4F-q5-mol"/>
+                    <navigationItem key="navigationItem" id="z4F-q5-mol">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="xnC-Vt-6R4">
+                            <rect key="frame" x="74" y="6" width="171" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="27.09"/>
+                                <segment title="28.09"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zh5-22-f7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +65,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="WnF-ws-17Q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Agenda" id="jZV-dw-8Ji"/>
-                    <navigationItem key="navigationItem" id="EjW-GC-Qje"/>
+                    <navigationItem key="navigationItem" id="EjW-GC-Qje">
+                        <nil key="title"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ayd-sj-FPO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -67,16 +79,16 @@
             </objects>
             <point key="canvasLocation" x="562" y="-204"/>
         </scene>
-        <!--Table View Controller - Speakers-->
+        <!--Ruby Shift2013 Speakers View Controller - Speakers-->
         <scene sceneID="kv8-xq-prR">
             <objects>
-                <tableViewController id="4X1-gg-Sew" sceneMemberID="viewController">
+                <tableViewController id="4X1-gg-Sew" customClass="RubyShift2013SpeakersViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5GY-yV-s9t">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IOc-Ju-mWl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerCell" id="IOc-Ju-mWl">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -109,16 +121,16 @@
             </objects>
             <point key="canvasLocation" x="562" y="459"/>
         </scene>
-        <!--Table View Controller - Stream-->
+        <!--Ruby Shift2013 Stream View Controller - Stream-->
         <scene sceneID="RHF-Rm-mey">
             <objects>
-                <tableViewController id="fxP-z4-lhp" sceneMemberID="viewController">
+                <tableViewController id="fxP-z4-lhp" customClass="RubyShift2013StreamViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wPw-Hs-cza">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ksF-BL-I3n">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StreamCell" id="ksF-BL-I3n">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -155,6 +167,12 @@
     <classes>
         <class className="RubyShift2013AgendaViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013AgendaViewController.h"/>
+        </class>
+        <class className="RubyShift2013SpeakersViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakersViewController.h"/>
+        </class>
+        <class className="RubyShift2013StreamViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013StreamViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
