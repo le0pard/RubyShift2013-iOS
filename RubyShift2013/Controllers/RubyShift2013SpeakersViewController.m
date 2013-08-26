@@ -28,7 +28,7 @@
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"Speakers", nil);
-    
+    // refresh button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
                                                                                            action:@selector(refetchData)];

@@ -31,12 +31,13 @@
     
     // Initialize Refresh Control
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    // label
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Pull to Refresh", nil)];
     // Configure Refresh Control
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     // Configure View Controller
     [self setRefreshControl:refreshControl];
-    
+    // refresh button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
                                                                                            action:@selector(refreshData:)];
