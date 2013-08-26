@@ -26,12 +26,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"Stream", nil);
+    
+    // Initialize Refresh Control
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    // Configure Refresh Control
+    [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    // Configure View Controller
+    [self setRefreshControl:refreshControl];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                           target:self
+                                                                                           action:@selector(refreshData:)];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)refreshData:(id)sender
+{
+    NSLog(@"Refreshing");
+    if ([sender isKindOfClass:[UIRefreshControl class]]){
+        // End Refreshing
+        [(UIRefreshControl *)sender endRefreshing];
+    }
 }
 
 - (void)didReceiveMemoryWarning
