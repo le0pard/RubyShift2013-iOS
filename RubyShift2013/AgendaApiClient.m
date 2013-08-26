@@ -8,7 +8,7 @@
 
 #import "AgendaApiClient.h"
 
-static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost:3000/api/v1";
+static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift2013.dev/api/v1";
 
 @implementation AgendaApiClient
 
