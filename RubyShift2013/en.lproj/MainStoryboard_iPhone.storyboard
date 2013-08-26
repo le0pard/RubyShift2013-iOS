@@ -64,7 +64,7 @@
         <scene sceneID="7OY-aR-EHz">
             <objects>
                 <navigationController definesPresentationContext="YES" id="WnF-ws-17Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agenda" id="jZV-dw-8Ji"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="first.png" id="jZV-dw-8Ji"/>
                     <navigationItem key="navigationItem" id="EjW-GC-Qje">
                         <nil key="title"/>
                     </navigationItem>
@@ -109,7 +109,7 @@
         <scene sceneID="wfn-CM-pdT">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7Gf-NF-2Ek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speakers" id="TVM-8d-YYy"/>
+                    <tabBarItem key="tabBarItem" title="Speakers" image="second.png" id="TVM-8d-YYy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="slC-CZ-eTf">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -151,7 +151,7 @@
         <scene sceneID="nZ4-MI-GBS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="62H-Dk-WRO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stream" id="G8C-al-kE6"/>
+                    <tabBarItem key="tabBarItem" title="Stream" image="first.png" id="G8C-al-kE6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ho5-5r-pJL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -164,6 +164,10 @@
             <point key="canvasLocation" x="562" y="1145"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first.png" width="30" height="30"/>
+        <image name="second.png" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="RubyShift2013AgendaViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013AgendaViewController.h"/>

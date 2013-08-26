@@ -36,6 +36,13 @@
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013AgendaViewController.m */; };
 		B3CB79EC17CBF225008F514B /* RubyShift2013StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79EB17CBF225008F514B /* RubyShift2013StreamViewController.m */; };
+		B3CB79EF17CBF388008F514B /* AgendaIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79EE17CBF388008F514B /* AgendaIncrementalStore.m */; };
+		B3CB79F217CBF507008F514B /* AgendaApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79F117CBF507008F514B /* AgendaApiClient.m */; };
+		B3CB79F417CBF692008F514B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F317CBF691008F514B /* CoreData.framework */; };
+		B3CB79F617CBF698008F514B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F517CBF698008F514B /* MapKit.framework */; };
+		B3CB79F817CBF6A4008F514B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F717CBF6A4008F514B /* CoreLocation.framework */; };
+		B3CB79FA17CBFA2F008F514B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */; };
+		B3CB79FC17CBFA36008F514B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +97,15 @@
 		B3CB79E817CBF1FE008F514B /* RubyShift2013AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013AgendaViewController.m; path = Controllers/RubyShift2013AgendaViewController.m; sourceTree = "<group>"; };
 		B3CB79EA17CBF225008F514B /* RubyShift2013StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013StreamViewController.h; path = Controllers/RubyShift2013StreamViewController.h; sourceTree = "<group>"; };
 		B3CB79EB17CBF225008F514B /* RubyShift2013StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013StreamViewController.m; path = Controllers/RubyShift2013StreamViewController.m; sourceTree = "<group>"; };
+		B3CB79ED17CBF388008F514B /* AgendaIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaIncrementalStore.h; sourceTree = "<group>"; };
+		B3CB79EE17CBF388008F514B /* AgendaIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaIncrementalStore.m; sourceTree = "<group>"; };
+		B3CB79F017CBF507008F514B /* AgendaApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaApiClient.h; sourceTree = "<group>"; };
+		B3CB79F117CBF507008F514B /* AgendaApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaApiClient.m; sourceTree = "<group>"; };
+		B3CB79F317CBF691008F514B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B3CB79F517CBF698008F514B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B3CB79F717CBF6A4008F514B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DF81A4887ED74F5F8459A563 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -98,6 +114,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CB79FC17CBFA36008F514B /* SystemConfiguration.framework in Frameworks */,
+				B3CB79FA17CBFA2F008F514B /* MobileCoreServices.framework in Frameworks */,
+				B3CB79F817CBF6A4008F514B /* CoreLocation.framework in Frameworks */,
+				B3CB79F617CBF698008F514B /* MapKit.framework in Frameworks */,
+				B3CB79F417CBF692008F514B /* CoreData.framework in Frameworks */,
 				B333DE5C178317B2005C7D48 /* UIKit.framework in Frameworks */,
 				B333DE5E178317B2005C7D48 /* Foundation.framework in Frameworks */,
 				B333DE60178317B2005C7D48 /* CoreGraphics.framework in Frameworks */,
@@ -141,6 +162,11 @@
 		B333DE5A178317B2005C7D48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */,
+				B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */,
+				B3CB79F717CBF6A4008F514B /* CoreLocation.framework */,
+				B3CB79F517CBF698008F514B /* MapKit.framework */,
+				B3CB79F317CBF691008F514B /* CoreData.framework */,
 				B333DE5B178317B2005C7D48 /* UIKit.framework */,
 				B333DE5D178317B2005C7D48 /* Foundation.framework */,
 				B333DE5F178317B2005C7D48 /* CoreGraphics.framework */,
@@ -164,6 +190,10 @@
 				B333DE83178317B2005C7D48 /* second.png */,
 				B333DE85178317B2005C7D48 /* second@2x.png */,
 				B333DE62178317B2005C7D48 /* Supporting Files */,
+				B3CB79ED17CBF388008F514B /* AgendaIncrementalStore.h */,
+				B3CB79EE17CBF388008F514B /* AgendaIncrementalStore.m */,
+				B3CB79F017CBF507008F514B /* AgendaApiClient.h */,
+				B3CB79F117CBF507008F514B /* AgendaApiClient.m */,
 			);
 			path = RubyShift2013;
 			sourceTree = "<group>";
@@ -388,6 +418,8 @@
 				B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */,
 				B3CB79E917CBF1FE008F514B /* RubyShift2013AgendaViewController.m in Sources */,
 				B3CB79EC17CBF225008F514B /* RubyShift2013StreamViewController.m in Sources */,
+				B3CB79EF17CBF388008F514B /* AgendaIncrementalStore.m in Sources */,
+				B3CB79F217CBF507008F514B /* AgendaApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
