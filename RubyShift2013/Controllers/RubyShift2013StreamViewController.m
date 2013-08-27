@@ -7,6 +7,7 @@
 //
 
 #import "RubyShift2013StreamViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface RubyShift2013StreamViewController ()
 
@@ -97,15 +98,11 @@
     static NSString *CellIdentifier = @"StreamCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
     NSDictionary *status = [self.twitterStatuses objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [status valueForKey:@"text"];
-    cell.detailTextLabel.text = [status valueForKey:@"user.screen_name"];
-    
+    cell.detailTextLabel.text = status[@"user"][@"screen_name"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:status[@"user"][@"profile_image_url"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
     return cell;
 }
 
