@@ -37,15 +37,37 @@
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     // Configure View Controller
     [self setRefreshControl:refreshControl];
+    // twitter
+    self.twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"jkf4w9QRC1FmQtFlMSgug"
+                                                   consumerSecret:@"cPdewnjgopV4CShVPk5LAANdE4AZ6GT0TEHqAQ2vehU"];
+    [self updateTwitter];
     // refresh button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
                                                                                            action:@selector(refreshData:)];
 }
 
+- (void) updateTwitter {
+    
+    [self.twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
+        
+        [self.twitter getSearchTweetsWithQuery:@"backbone" successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
+            //NSLog(@"Search data : %@",searchMetadata);
+            //NSLog(@"\n\n Status : %@",statuses);
+            self.twitterStatuses = statuses;
+            [self.tableView reloadData];
+        } errorBlock:^(NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
+    } errorBlock:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 - (void)refreshData:(id)sender
 {
-    NSLog(@"Refreshing");
+    [self updateTwitter];
     if ([sender isKindOfClass:[UIRefreshControl class]]){
         // End Refreshing
         [(UIRefreshControl *)sender endRefreshing];
@@ -62,24 +84,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.twitterStatuses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"StreamCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    NSDictionary *status = [self.twitterStatuses objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [status valueForKey:@"text"];
+    cell.detailTextLabel.text = [status valueForKey:@"user.screen_name"];
     
     return cell;
 }

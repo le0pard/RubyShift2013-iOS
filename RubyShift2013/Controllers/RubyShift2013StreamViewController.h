@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STTwitterAPI.h"
 
 @interface RubyShift2013StreamViewController : UITableViewController
+
+@property (nonatomic, strong) STTwitterAPI *twitter;
+@property (nonatomic, retain) NSArray *twitterStatuses;
 
 @end
