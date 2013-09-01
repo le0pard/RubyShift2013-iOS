@@ -7,10 +7,10 @@
 //
 
 #import <CoreData/CoreData.h>
-#import "RubyShift2013AgendaViewController.h"
+#import "RubyShift2013TalksViewController.h"
 #import "Talk.h"
 
-@interface RubyShift2013AgendaViewController () <NSFetchedResultsControllerDelegate> {
+@interface RubyShift2013TalksViewController () <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
 }
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation RubyShift2013AgendaViewController
+@implementation RubyShift2013TalksViewController
 
 - (void)refetchData {
     [_fetchedResultsController performSelectorOnMainThread:@selector(performFetch:) withObject:nil waitUntilDone:YES modes:@[ NSRunLoopCommonModes ]];
@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Agenda", nil);
+    self.title = NSLocalizedString(@"Talks", nil);
     
     NSDate *date = [NSDate date];
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
@@ -46,12 +46,12 @@
     date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:date]];
     NSDate *date2 = [date dateByAddingTimeInterval: +86400.0];
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talks"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date < %@)", date, date2];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talk"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"talkDate" ascending:YES]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@)", date, date2];
     [fetchRequest setPredicate:predicate];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Agenda"];
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Talk"];
     _fetchedResultsController.delegate = self;
     
     [self refetchData];
@@ -69,12 +69,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[_fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.talks.count;
+    return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,9 +82,9 @@
     static NSString *CellIdentifier = @"TalkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Talk *talk = (Talk *)self.talks[indexPath.row];
-    NSLog(@"%@", talk);
-    cell.textLabel.text = [talk valueForKey:@"title"];
+    Talk *talk = (Talk *)[_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [talk valueForKey:@"talkTitle"];
+    cell.detailTextLabel.text = [talk valueForKey:@"talkDescription"];
     
     return cell;
 }
@@ -144,9 +144,6 @@
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    NSInteger zeroInt = 0;
-    Agenda *agenda = (Agenda *)[[[[controller sections] objectAtIndex:zeroInt] objects] objectAtIndex:zeroInt];
-    self.talks = [agenda.talks allObjects];
     [self.tableView reloadData];
 }
 

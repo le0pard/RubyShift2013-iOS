@@ -7,7 +7,7 @@
 //
 
 #import "RubyShift2013AppDelegate.h"
-#import "AgendaIncrementalStore.h"
+#import "TalkIncrementalStore.h"
 
 @implementation RubyShift2013AppDelegate
 @synthesize window = _window;
@@ -107,7 +107,7 @@
     }
     
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[__persistentStoreCoordinator addPersistentStoreWithType:[AgendaIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
+    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[__persistentStoreCoordinator addPersistentStoreWithType:[TalkIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"RubyShift2013.sqlite"];
     NSDictionary *options = @{

@@ -10,8 +10,8 @@
 
 #import "TTTDateTransformers.h"
 
-@interface AgendaApiClient : AFRESTClient <AFIncrementalStoreHTTPClient>
+@interface TalkApiClient : AFRESTClient <AFIncrementalStoreHTTPClient>
 
-+ (AgendaApiClient *)sharedClient;
++ (TalkApiClient *)sharedClient;
 
 @end

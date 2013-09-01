@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
-#import "AgendaApiClient.h"
+#import "TalkApiClient.h"
 
 static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost:4567/api/v1";
 
-@implementation AgendaApiClient
+@implementation TalkApiClient
 
-+ (AgendaApiClient *)sharedClient {
-    static AgendaApiClient *_sharedClient = nil;
++ (TalkApiClient *)sharedClient {
+    static TalkApiClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kAFIncrementalStoreAPIBaseURLString]];
@@ -40,8 +40,8 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
                              withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *mutableURLRequest = nil;
-    if ([fetchRequest.entityName isEqualToString:@"Agenda"]) {
-        mutableURLRequest = [self requestWithMethod:@"GET" path:@"agenda" parameters:nil];
+    if ([fetchRequest.entityName isEqualToString:@"Talk"]) {
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"talks" parameters:nil];
     }
     
     return mutableURLRequest;
@@ -54,13 +54,11 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
 {
     NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
     
-    if ([entity.name isEqualToString:@"Agenda"]) {
+    if ([entity.name isEqualToString:@"Talk"]) {
         [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];
-        [mutablePropertyValues setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:[representation valueForKey:@"date"]] forKey:@"date"];
-    } else if ([entity.name isEqualToString:@"Talk"]) {
-        [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];
-        [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"title"];
-        [mutablePropertyValues setValue:[representation valueForKey:@"talk_description"] forKey:@"talkDescription"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"talkTitle"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"description"] forKey:@"talkDescription"];
+        [mutablePropertyValues setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:[representation valueForKey:@"date"]] forKey:@"talkDate"];
     }
     
     return mutablePropertyValues;
@@ -82,12 +80,14 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
                                                        fromResponse:(NSHTTPURLResponse *)response {
     NSDictionary *relationshipRepresentations = [super representationsForRelationshipsFromRepresentation:representation ofEntity:entity fromResponse:response];
     
-    if ([entity.name isEqualToString:@"Agenda"]) {
+    if ([entity.name isEqualToString:@"Talk"]) {
+        /*
         NSMutableDictionary *mutableRelationshipRepresentations = [relationshipRepresentations mutableCopy];
         
         [mutableRelationshipRepresentations setValue:[representation valueForKey:@"talks"] forKey:@"talks"];
         
         relationshipRepresentations = [[NSDictionary alloc] initWithDictionary:mutableRelationshipRepresentations];
+         */
     }
     
     return relationshipRepresentations;

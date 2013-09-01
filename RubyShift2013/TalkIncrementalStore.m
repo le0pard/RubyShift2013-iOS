@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
-#import "AgendaIncrementalStore.h"
-#import "AgendaApiClient.h"
+#import "TalkIncrementalStore.h"
+#import "TalkApiClient.h"
 
-@implementation AgendaIncrementalStore
+@implementation TalkIncrementalStore
 
 + (void)initialize {
     [NSPersistentStoreCoordinator registerStoreClass:self forStoreType:[self type]];
@@ -24,7 +24,7 @@
 }
 
 - (id <AFIncrementalStoreHTTPClient>)HTTPClient {
-    return [AgendaApiClient sharedClient];
+    return [TalkApiClient sharedClient];
 }
 
 

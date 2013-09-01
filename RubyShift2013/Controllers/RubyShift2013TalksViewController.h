@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RubyShift2013AgendaViewController : UITableViewController
-
-@property (nonatomic, strong) NSArray *talks;
+@interface RubyShift2013TalksViewController : UITableViewController
 
 @end

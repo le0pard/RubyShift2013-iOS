@@ -8,6 +8,6 @@
 
 #import "AFIncrementalStore.h"
 
-@interface AgendaIncrementalStore : AFIncrementalStore
+@interface TalkIncrementalStore : AFIncrementalStore
 
 @end
