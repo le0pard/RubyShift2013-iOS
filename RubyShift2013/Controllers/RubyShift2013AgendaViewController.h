@@ -10,4 +10,6 @@
 
 @interface RubyShift2013AgendaViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *talks;
+
 @end

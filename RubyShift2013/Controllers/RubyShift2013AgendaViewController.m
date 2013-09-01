@@ -8,15 +8,22 @@
 
 #import <CoreData/CoreData.h>
 #import "RubyShift2013AgendaViewController.h"
-#import "Agenda.h"
+#import "Talk.h"
 
 @interface RubyShift2013AgendaViewController () <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
 }
 
+- (void)refetchData;
+
 @end
 
 @implementation RubyShift2013AgendaViewController
+
+- (void)refetchData {
+    [_fetchedResultsController performSelectorOnMainThread:@selector(performFetch:) withObject:nil waitUntilDone:YES modes:@[ NSRunLoopCommonModes ]];
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,24 +40,23 @@
     
     self.title = NSLocalizedString(@"Agenda", nil);
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Agenda"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES selector:@selector(localizedStandardCompare:)]];
-    fetchRequest.returnsObjectsAsFaults = NO;
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(date >= %@) AND (date < %@)", [NSDate date], [NSDate date]]];
+    NSDate *date = [NSDate date];
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
+    date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:date]];
+    NSDate *date2 = [date dateByAddingTimeInterval: +86400.0];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talks"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date < %@)", date, date2];
+    [fetchRequest setPredicate:predicate];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Agenda"];
     _fetchedResultsController.delegate = self;
     
-    [_fetchedResultsController performFetch:nil];
-    // refresh button
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                           target:self
-                                                                                           action:@selector(refetchData)];
-}
-
-- (void)refetchData {
-    _fetchedResultsController.fetchRequest.resultType = NSManagedObjectResultType;
-    [_fetchedResultsController performFetch:nil];
+    [self refetchData];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refetchData)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,21 +69,22 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[_fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    return self.talks.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"AgendaCell";
+    static NSString *CellIdentifier = @"TalkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSManagedObject *managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [managedObject valueForKey:@"name"];
+    Talk *talk = (Talk *)self.talks[indexPath.row];
+    NSLog(@"%@", talk);
+    cell.textLabel.text = [talk valueForKey:@"title"];
     
     return cell;
 }
@@ -132,6 +139,15 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    NSInteger zeroInt = 0;
+    Agenda *agenda = (Agenda *)[[[[controller sections] objectAtIndex:zeroInt] objects] objectAtIndex:zeroInt];
+    self.talks = [agenda.talks allObjects];
+    [self.tableView reloadData];
 }
 
 @end

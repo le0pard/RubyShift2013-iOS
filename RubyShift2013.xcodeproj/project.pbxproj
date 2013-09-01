@@ -28,11 +28,10 @@
 		B333DE90178317B2005C7D48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5D178317B2005C7D48 /* Foundation.framework */; };
 		B333DE98178317B2005C7D48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B333DE96178317B2005C7D48 /* InfoPlist.strings */; };
 		B333DE9B178317B2005C7D48 /* RubyShift2013Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */; };
+		B39C215117D2E2D800951BFE /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B39C215017D2E2D800951BFE /* Speaker.m */; };
+		B39C215417D2E2EC00951BFE /* TalksSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B39C215317D2E2EC00951BFE /* TalksSpeaker.m */; };
+		B39C215717D2E2ED00951BFE /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B39C215617D2E2ED00951BFE /* Talk.m */; };
 		B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */; };
-		B3CB79D917CBEF1A008F514B /* TalksSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D817CBEF1A008F514B /* TalksSpeaker.m */; };
-		B3CB79DC17CBEF2F008F514B /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79DB17CBEF2F008F514B /* Talk.m */; };
-		B3CB79DF17CBEF48008F514B /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79DE17CBEF48008F514B /* Speaker.m */; };
-		B3CB79E217CBEF48008F514B /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E117CBEF48008F514B /* Agenda.m */; };
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013AgendaViewController.m */; };
 		B3CB79EC17CBF225008F514B /* RubyShift2013StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79EB17CBF225008F514B /* RubyShift2013StreamViewController.m */; };
@@ -82,15 +81,13 @@
 		B333DE97178317B2005C7D48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B333DE99178317B2005C7D48 /* RubyShift2013Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyShift2013Tests.h; sourceTree = "<group>"; };
 		B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013Tests.m; sourceTree = "<group>"; };
+		B39C214F17D2E2D800951BFE /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = Models/Speaker.h; sourceTree = "<group>"; };
+		B39C215017D2E2D800951BFE /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = Models/Speaker.m; sourceTree = "<group>"; };
+		B39C215217D2E2EC00951BFE /* TalksSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TalksSpeaker.h; path = Models/TalksSpeaker.h; sourceTree = "<group>"; };
+		B39C215317D2E2EC00951BFE /* TalksSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TalksSpeaker.m; path = Models/TalksSpeaker.m; sourceTree = "<group>"; };
+		B39C215517D2E2ED00951BFE /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
+		B39C215617D2E2ED00951BFE /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
 		B3CB79D517CBEC09008F514B /* RubyShift2013.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RubyShift2013.xcdatamodel; sourceTree = "<group>"; };
-		B3CB79D717CBEF1A008F514B /* TalksSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TalksSpeaker.h; path = Models/TalksSpeaker.h; sourceTree = "<group>"; };
-		B3CB79D817CBEF1A008F514B /* TalksSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TalksSpeaker.m; path = Models/TalksSpeaker.m; sourceTree = "<group>"; };
-		B3CB79DA17CBEF2F008F514B /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
-		B3CB79DB17CBEF2F008F514B /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
-		B3CB79DD17CBEF48008F514B /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = Models/Speaker.h; sourceTree = "<group>"; };
-		B3CB79DE17CBEF48008F514B /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = Models/Speaker.m; sourceTree = "<group>"; };
-		B3CB79E017CBEF48008F514B /* Agenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agenda.h; path = Models/Agenda.h; sourceTree = "<group>"; };
-		B3CB79E117CBEF48008F514B /* Agenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agenda.m; path = Models/Agenda.m; sourceTree = "<group>"; };
 		B3CB79E417CBF1B3008F514B /* RubyShift2013SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakersViewController.h; path = Controllers/RubyShift2013SpeakersViewController.h; sourceTree = "<group>"; };
 		B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakersViewController.m; path = Controllers/RubyShift2013SpeakersViewController.m; sourceTree = "<group>"; };
 		B3CB79E717CBF1FE008F514B /* RubyShift2013AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013AgendaViewController.h; path = Controllers/RubyShift2013AgendaViewController.h; sourceTree = "<group>"; };
@@ -235,14 +232,12 @@
 			isa = PBXGroup;
 			children = (
 				B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */,
-				B3CB79D717CBEF1A008F514B /* TalksSpeaker.h */,
-				B3CB79D817CBEF1A008F514B /* TalksSpeaker.m */,
-				B3CB79DA17CBEF2F008F514B /* Talk.h */,
-				B3CB79DB17CBEF2F008F514B /* Talk.m */,
-				B3CB79E017CBEF48008F514B /* Agenda.h */,
-				B3CB79E117CBEF48008F514B /* Agenda.m */,
-				B3CB79DD17CBEF48008F514B /* Speaker.h */,
-				B3CB79DE17CBEF48008F514B /* Speaker.m */,
+				B39C214F17D2E2D800951BFE /* Speaker.h */,
+				B39C215517D2E2ED00951BFE /* Talk.h */,
+				B39C215617D2E2ED00951BFE /* Talk.m */,
+				B39C215217D2E2EC00951BFE /* TalksSpeaker.h */,
+				B39C215317D2E2EC00951BFE /* TalksSpeaker.m */,
+				B39C215017D2E2D800951BFE /* Speaker.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,15 +406,14 @@
 				B333DE68178317B2005C7D48 /* main.m in Sources */,
 				B333DE6C178317B2005C7D48 /* RubyShift2013AppDelegate.m in Sources */,
 				B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */,
-				B3CB79D917CBEF1A008F514B /* TalksSpeaker.m in Sources */,
-				B3CB79DC17CBEF2F008F514B /* Talk.m in Sources */,
-				B3CB79DF17CBEF48008F514B /* Speaker.m in Sources */,
-				B3CB79E217CBEF48008F514B /* Agenda.m in Sources */,
 				B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */,
 				B3CB79E917CBF1FE008F514B /* RubyShift2013AgendaViewController.m in Sources */,
 				B3CB79EC17CBF225008F514B /* RubyShift2013StreamViewController.m in Sources */,
 				B3CB79EF17CBF388008F514B /* AgendaIncrementalStore.m in Sources */,
 				B3CB79F217CBF507008F514B /* AgendaApiClient.m in Sources */,
+				B39C215117D2E2D800951BFE /* Speaker.m in Sources */,
+				B39C215417D2E2EC00951BFE /* TalksSpeaker.m in Sources */,
+				B39C215717D2E2ED00951BFE /* Talk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

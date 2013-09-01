@@ -2,7 +2,7 @@
 //  Talk.m
 //  RubyShift2013
 //
-//  Created by Alex on 8/26/13.
+//  Created by Alex on 9/1/13.
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
@@ -13,9 +13,9 @@
 @implementation Talk
 
 @dynamic id;
-@dynamic title;
 @dynamic talkDescription;
+@dynamic talkTitle;
+@dynamic talkDate;
 @dynamic speakers;
-@dynamic agenda;
 
 @end

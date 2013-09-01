@@ -107,16 +107,24 @@
     }
     
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
     AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[__persistentStoreCoordinator addPersistentStoreWithType:[AgendaIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"RubyShift2013.sqlite"];
+    NSDictionary *options = @{
+                              NSInferMappingModelAutomaticallyOption : @(YES),
+                              NSMigratePersistentStoresAutomaticallyOption: @(YES)
+                              };
+
     NSError *error = nil;
-    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:&error]) {
+    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    NSLog(@"SQLite URL: %@", storeURL);
     
     return __persistentStoreCoordinator;
 }
+
 
 #pragma mark - Application's Documents directory
 
