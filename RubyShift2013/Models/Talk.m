@@ -7,7 +7,7 @@
 //
 
 #import "Talk.h"
-#import "TalksSpeaker.h"
+#import "Speaker.h"
 
 
 @implementation Talk
@@ -16,6 +16,6 @@
 @dynamic talkDescription;
 @dynamic talkTitle;
 @dynamic talkDate;
-@dynamic speakers;
+@dynamic speaker;
 
 @end

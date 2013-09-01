@@ -10,4 +10,6 @@
 
 @interface RubyShift2013TalksViewController : UITableViewController
 
+- (IBAction)changeDate:(id)sender;
+
 @end

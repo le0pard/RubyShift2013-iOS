@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "RubyShift2013TalksViewController.h"
 #import "Talk.h"
+#import "Speaker.h"
 
 @interface RubyShift2013TalksViewController () <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
@@ -40,23 +41,55 @@
     
     self.title = NSLocalizedString(@"Talks", nil);
     
-    NSDate *date = [NSDate date];
-    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-    NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
-    date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:date]];
-    NSDate *date2 = [date dateByAddingTimeInterval: +86400.0];
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talk"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"talkDate" ascending:YES]];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@)", date, date2];
-    [fetchRequest setPredicate:predicate];
-    
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Talk"];
-    _fetchedResultsController.delegate = self;
+    [self initFetchController];
     
     [self refetchData];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refetchData)];
+}
+
+- (void) initFetchController {
+    NSDate *beginAgenda = [NSDate date];
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
+    beginAgenda = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:beginAgenda]];
+    NSDate *endAgenda = [beginAgenda dateByAddingTimeInterval: +86400.0];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talk"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"talkDate" ascending:YES]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@)", beginAgenda, endAgenda];
+    [fetchRequest setPredicate:predicate];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:[NSString stringWithFormat:@"Talks%i", 0]];
+    _fetchedResultsController.delegate = self;
+}
+
+- (IBAction)changeDate:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    
+    NSDate *beginAgenda = [NSDate date];
+    NSDate *endAgenda = [NSDate date];
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
+    beginAgenda = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:beginAgenda]];
+    
+    if ([segmentedControl selectedSegmentIndex] == 1) {
+        beginAgenda = [beginAgenda dateByAddingTimeInterval: +86400.0];
+    }
+    endAgenda = [beginAgenda dateByAddingTimeInterval: +86400.0];
+    
+    NSLog(@"%@ - %@", beginAgenda, endAgenda);
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talk"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"talkDate" ascending:YES]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@)", beginAgenda, endAgenda]];
+
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:[NSString stringWithFormat:@"Talks%i", [segmentedControl selectedSegmentIndex]]];
+    _fetchedResultsController.delegate = self;
+    
+    [self refetchData];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +117,14 @@
     
     Talk *talk = (Talk *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [talk valueForKey:@"talkTitle"];
-    cell.detailTextLabel.text = [talk valueForKey:@"talkDescription"];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy.MM.dd G 'at' HH:mm:ss zzz"];
+    
+    cell.detailTextLabel.text = [formatter stringFromDate:[talk valueForKey:@"talkDate"]];
+    if (talk.speaker){
+        //cell.detailTextLabel.text = [[talk speaker] valueForKey:@"speakerFullName"];
+    }
     
     return cell;
 }

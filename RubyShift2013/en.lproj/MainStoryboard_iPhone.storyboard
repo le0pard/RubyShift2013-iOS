@@ -65,6 +65,9 @@
                                 <segment title="27.09"/>
                                 <segment title="28.09"/>
                             </segments>
+                            <connections>
+                                <action selector="changeDate:" destination="KqJ-bO-RZx" eventType="valueChanged" id="QLc-8v-bDC"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                 </tableViewController>
@@ -213,6 +216,9 @@
         </class>
         <class className="RubyShift2013TalksViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

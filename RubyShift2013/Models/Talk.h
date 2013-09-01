@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class TalksSpeaker;
+@class Speaker;
 
 @interface Talk : NSManagedObject
 
@@ -17,14 +17,6 @@
 @property (nonatomic, retain) NSString * talkDescription;
 @property (nonatomic, retain) NSString * talkTitle;
 @property (nonatomic, retain) NSDate * talkDate;
-@property (nonatomic, retain) NSSet *speakers;
-@end
-
-@interface Talk (CoreDataGeneratedAccessors)
-
-- (void)addSpeakersObject:(TalksSpeaker *)value;
-- (void)removeSpeakersObject:(TalksSpeaker *)value;
-- (void)addSpeakers:(NSSet *)values;
-- (void)removeSpeakers:(NSSet *)values;
+@property (nonatomic, retain) Speaker *speaker;
 
 @end

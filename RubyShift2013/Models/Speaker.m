@@ -7,15 +7,16 @@
 //
 
 #import "Speaker.h"
-#import "TalksSpeaker.h"
+#import "Talk.h"
 
 
 @implementation Speaker
 
-@dynamic bio;
-@dynamic full_name;
+@dynamic speakerBio;
+@dynamic speakerFullName;
 @dynamic id;
-@dynamic photo;
-@dynamic talks;
+@dynamic speakerPhoto;
+@dynamic speakerThumb;
+@dynamic talk;
 
 @end

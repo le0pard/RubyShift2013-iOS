@@ -59,39 +59,14 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
         [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"talkTitle"];
         [mutablePropertyValues setValue:[representation valueForKey:@"description"] forKey:@"talkDescription"];
         [mutablePropertyValues setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:[representation valueForKey:@"date"]] forKey:@"talkDate"];
+    } else if ([entity.name isEqualToString:@"Speaker"]) {
+        [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"full_name"] forKey:@"speakerFullName"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"bio"] forKey:@"speakerBio"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"photo"] forKey:@"speakerPhoto"];
     }
     
     return mutablePropertyValues;
-}
-
-- (id)representationOrArrayOfRepresentationsOfEntity:(NSEntityDescription *)entity
-                                  fromResponseObject:(id)responseObject {
-    NSDictionary *relationshipRepresentations = [super representationOrArrayOfRepresentationsOfEntity:entity fromResponseObject:responseObject];
-    
-    if ([entity.name isEqualToString:@"Agenda"]) {
-        //NSLog(@"%@", responseObject);
-    }
-    
-    return relationshipRepresentations;
-}
-
-- (NSDictionary *)representationsForRelationshipsFromRepresentation:(NSDictionary *)representation
-                                                           ofEntity:(NSEntityDescription *)entity
-                                                       fromResponse:(NSHTTPURLResponse *)response {
-    NSDictionary *relationshipRepresentations = [super representationsForRelationshipsFromRepresentation:representation ofEntity:entity fromResponse:response];
-    
-    if ([entity.name isEqualToString:@"Talk"]) {
-        /*
-        NSMutableDictionary *mutableRelationshipRepresentations = [relationshipRepresentations mutableCopy];
-        
-        [mutableRelationshipRepresentations setValue:[representation valueForKey:@"talks"] forKey:@"talks"];
-        
-        relationshipRepresentations = [[NSDictionary alloc] initWithDictionary:mutableRelationshipRepresentations];
-         */
-    }
-    
-    return relationshipRepresentations;
-    
 }
 
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
