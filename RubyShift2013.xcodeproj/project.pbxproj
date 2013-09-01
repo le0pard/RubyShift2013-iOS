@@ -41,6 +41,7 @@
 		B3CB79F817CBF6A4008F514B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F717CBF6A4008F514B /* CoreLocation.framework */; };
 		B3CB79FA17CBFA2F008F514B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */; };
 		B3CB79FC17CBFA36008F514B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */; };
+		B3D966F917D32CB300525FED /* StreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D966F817D32CB300525FED /* StreamTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		B3CB79F717CBF6A4008F514B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B3D966F717D32CB300525FED /* StreamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamTableViewCell.h; sourceTree = "<group>"; };
+		B3D966F817D32CB300525FED /* StreamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamTableViewCell.m; sourceTree = "<group>"; };
 		DF81A4887ED74F5F8459A563 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -188,6 +191,8 @@
 				B3CB79EE17CBF388008F514B /* TalkIncrementalStore.m */,
 				B3CB79F017CBF507008F514B /* TalkApiClient.h */,
 				B3CB79F117CBF507008F514B /* TalkApiClient.m */,
+				B3D966F717D32CB300525FED /* StreamTableViewCell.h */,
+				B3D966F817D32CB300525FED /* StreamTableViewCell.m */,
 			);
 			path = RubyShift2013;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				B3CB79F217CBF507008F514B /* TalkApiClient.m in Sources */,
 				B39C215A17D2EAB500951BFE /* Speaker.m in Sources */,
 				B39C215D17D2EAB500951BFE /* Talk.m in Sources */,
+				B3D966F917D32CB300525FED /* StreamTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "RubyShift2013StreamViewController.h"
-#import "UIImageView+AFNetworking.h"
+#import "StreamTableViewCell.h"
 
 @interface RubyShift2013StreamViewController ()
 
@@ -96,13 +96,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"StreamCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    StreamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[StreamTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     
-    NSDictionary *status = [self.twitterStatuses objectAtIndex:indexPath.row];
+    [cell setTwitterStatus:[self.twitterStatuses objectAtIndex:indexPath.row]];
     
-    cell.textLabel.text = [status valueForKey:@"text"];
-    cell.detailTextLabel.text = status[@"user"][@"screen_name"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:status[@"user"][@"profile_image_url"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
     return cell;
 }
 
@@ -147,15 +148,17 @@
 
 #pragma mark - Table view delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *twit = [self.twitterStatuses objectAtIndex:indexPath.row];
+    return [StreamTableViewCell heightForCellWithTwit:twit];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSDictionary *twit = [self.twitterStatuses objectAtIndex:indexPath.row];
+    NSString *url = [NSString stringWithFormat:@"https://twitter.com/%@/status/%@", twit[@"user"][@"screen_name"], [twit valueForKey:@"id"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
+
 
 @end
