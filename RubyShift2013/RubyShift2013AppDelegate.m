@@ -8,6 +8,7 @@
 
 #import "RubyShift2013AppDelegate.h"
 #import "TalkIncrementalStore.h"
+#import "Orbiter.h"
 
 @implementation RubyShift2013AppDelegate
 @synthesize window = _window;
@@ -22,6 +23,20 @@
     [NSURLCache setSharedURLCache:URLCache];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    if (launchOptions != nil)
+    {
+        NSDictionary* dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (dictionary != nil)
+        {
+            NSLog(@"Launched from push notification: %@", dictionary);
+            
+            [self clearNotifications];
+        }
+    }
+
     
     return YES;
 }
@@ -46,6 +61,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self clearNotifications];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -131,6 +147,39 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Push notifications
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSLog(@"Device Token=%@", deviceToken);
+    NSURL *serverURL = [NSURL URLWithString:@"http://rubyshift2013.herokuapp.com/push_notification/"];
+    Orbiter *orbiter = [[Orbiter alloc] initWithBaseURL:serverURL credential:nil];
+    [orbiter registerDeviceToken:deviceToken withAlias:nil success:^(id responseObject) {
+        NSLog(@"Registration Success: %@", responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"Registration Error: %@", error);
+    }];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    for (id key in userInfo) {
+        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+    }
+    [self clearNotifications];
+    
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void) clearNotifications {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 

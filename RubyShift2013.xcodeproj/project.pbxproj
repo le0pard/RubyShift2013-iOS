@@ -541,6 +541,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF81A4887ED74F5F8459A563 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyShift2013/RubyShift2013-Prefix.pch";
 				INFOPLIST_FILE = "RubyShift2013/RubyShift2013-Info.plist";
