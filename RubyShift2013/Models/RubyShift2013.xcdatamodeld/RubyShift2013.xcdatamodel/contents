@@ -12,11 +12,12 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="talkDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="talkTimeRange" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="talkTitle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Speaker" inverseName="talks" inverseEntity="Speaker" syncable="YES"/>
     </entity>
     <elements>
         <element name="Speaker" positionX="160" positionY="-9" width="128" height="133"/>
-        <element name="Talk" positionX="169" positionY="186" width="128" height="118"/>
+        <element name="Talk" positionX="169" positionY="186" width="128" height="135"/>
     </elements>
 </model>

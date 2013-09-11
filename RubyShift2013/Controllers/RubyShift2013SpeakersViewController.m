@@ -6,13 +6,24 @@
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "RubyShift2013SpeakersViewController.h"
+#import "UIImageView+AFNetworking.h"
+#import "Speaker.h"
 
-@interface RubyShift2013SpeakersViewController ()
+@interface RubyShift2013SpeakersViewController () <NSFetchedResultsControllerDelegate> {
+    NSFetchedResultsController *_fetchedResultsController;
+}
+
+- (void)refetchData;
 
 @end
 
 @implementation RubyShift2013SpeakersViewController
+
+- (void)refetchData {
+    [_fetchedResultsController performSelectorOnMainThread:@selector(performFetch:) withObject:nil waitUntilDone:YES modes:@[ NSRunLoopCommonModes ]];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,14 +39,23 @@
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"Speakers", nil);
+    
+    [self initFetchController];
+    
+    [self refetchData];
+    
     // refresh button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
                                                                                            action:@selector(refetchData)];
 }
 
-- (void)refetchData {
-    NSLog(@"Updating");
+- (void) initFetchController {    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Speaker"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"speakerFullName" ascending:YES]];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Speakers"];
+    _fetchedResultsController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,25 +68,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [[_fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SpeakerCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    Speaker *speaker = (Speaker *)[_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [speaker valueForKey:@"speakerFullName"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
+        
     return cell;
 }
 

@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSDate * talkDate;
 @property (nonatomic, retain) NSString * talkDescription;
 @property (nonatomic, retain) NSString * talkTitle;
+@property (nonatomic, retain) NSString * talkTimeRange;
 @property (nonatomic, retain) Speaker *speaker;
 
 @end

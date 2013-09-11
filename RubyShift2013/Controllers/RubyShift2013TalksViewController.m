@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import "RubyShift2013TalksViewController.h"
+#import "UIImageView+AFNetworking.h"
 #import "Talk.h"
 #import "Speaker.h"
 
@@ -117,13 +118,10 @@
     
     Talk *talk = (Talk *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [talk valueForKey:@"talkTitle"];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy.MM.dd G 'at' HH:mm:ss zzz"];
-    
-    cell.detailTextLabel.text = [formatter stringFromDate:[talk valueForKey:@"talkDate"]];
+
     if (talk.speaker){
-        //cell.detailTextLabel.text = [[talk speaker] valueForKey:@"speakerFullName"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (%@)", [talk valueForKey:@"talkTimeRange"], [[talk speaker] valueForKey:@"speakerFullName"]];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[[talk speaker] valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
     }
     
     return cell;

@@ -42,6 +42,8 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
     NSMutableURLRequest *mutableURLRequest = nil;
     if ([fetchRequest.entityName isEqualToString:@"Talk"]) {
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"talks" parameters:nil];
+    } else if ([fetchRequest.entityName isEqualToString:@"Speaker"]) {
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"speakers" parameters:nil];
     }
     
     return mutableURLRequest;
@@ -58,6 +60,7 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost
         [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];
         [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"talkTitle"];
         [mutablePropertyValues setValue:[representation valueForKey:@"description"] forKey:@"talkDescription"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"time_range"] forKey:@"talkTimeRange"];
         [mutablePropertyValues setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:[representation valueForKey:@"date"]] forKey:@"talkDate"];
     } else if ([entity.name isEqualToString:@"Speaker"]) {
         [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];

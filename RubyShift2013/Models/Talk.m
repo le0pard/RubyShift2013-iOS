@@ -16,6 +16,7 @@
 @dynamic talkDate;
 @dynamic talkDescription;
 @dynamic talkTitle;
+@dynamic talkTimeRange;
 @dynamic speaker;
 
 @end
