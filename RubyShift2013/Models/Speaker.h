@@ -2,7 +2,7 @@
 //  Speaker.h
 //  RubyShift2013
 //
-//  Created by Alex on 9/1/13.
+//  Created by Alex on 9/11/13.
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
@@ -13,11 +13,19 @@
 
 @interface Speaker : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * speakerBio;
 @property (nonatomic, retain) NSString * speakerFullName;
-@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * speakerPhoto;
 @property (nonatomic, retain) NSString * speakerThumb;
-@property (nonatomic, retain) Talk *talk;
+@property (nonatomic, retain) NSSet *talks;
+@end
+
+@interface Speaker (CoreDataGeneratedAccessors)
+
+- (void)addTalksObject:(Talk *)value;
+- (void)removeTalksObject:(Talk *)value;
+- (void)addTalks:(NSSet *)values;
+- (void)removeTalks:(NSSet *)values;
 
 @end

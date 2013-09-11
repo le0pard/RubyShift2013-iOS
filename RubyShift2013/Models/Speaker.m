@@ -2,7 +2,7 @@
 //  Speaker.m
 //  RubyShift2013
 //
-//  Created by Alex on 9/1/13.
+//  Created by Alex on 9/11/13.
 //  Copyright (c) 2013 Alexey Vasyliev. All rights reserved.
 //
 
@@ -12,11 +12,11 @@
 
 @implementation Speaker
 
+@dynamic id;
 @dynamic speakerBio;
 @dynamic speakerFullName;
-@dynamic id;
 @dynamic speakerPhoto;
 @dynamic speakerThumb;
-@dynamic talk;
+@dynamic talks;
 
 @end

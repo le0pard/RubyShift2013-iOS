@@ -6,14 +6,14 @@
         <attribute name="speakerFullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerPhoto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerThumb" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="talk" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Talk" inverseName="speaker" inverseEntity="Talk" syncable="YES"/>
+        <relationship name="talks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Talk" inverseName="speaker" inverseEntity="Talk" syncable="YES"/>
     </entity>
     <entity name="Talk" representedClassName="Talk" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="talkDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="talkTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Speaker" inverseName="talk" inverseEntity="Speaker" syncable="YES"/>
+        <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Speaker" inverseName="talks" inverseEntity="Speaker" syncable="YES"/>
     </entity>
     <elements>
         <element name="Speaker" positionX="160" positionY="-9" width="128" height="133"/>
