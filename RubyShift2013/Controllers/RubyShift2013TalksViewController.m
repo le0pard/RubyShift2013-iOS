@@ -121,7 +121,7 @@
 
     if (talk.speaker){
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (%@)", [talk valueForKey:@"talkTimeRange"], [[talk speaker] valueForKey:@"speakerFullName"]];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[[talk speaker] valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[[talk speaker] valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"speaker.png"]];
     }
     
     return cell;

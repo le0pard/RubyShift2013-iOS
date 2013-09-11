@@ -83,7 +83,7 @@
     
     Speaker *speaker = (Speaker *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [speaker valueForKey:@"speakerFullName"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"first.png"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"speaker.png"]];
         
     return cell;
 }

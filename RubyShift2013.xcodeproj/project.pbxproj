@@ -29,6 +29,7 @@
 		B333DE98178317B2005C7D48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B333DE96178317B2005C7D48 /* InfoPlist.strings */; };
 		B333DE9B178317B2005C7D48 /* RubyShift2013Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */; };
 		B38027C317E1158900B065D7 /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B38027C217E1158900B065D7 /* Talk.m */; };
+		B38027C517E1179D00B065D7 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B38027C417E1179D00B065D7 /* speaker.png */; };
 		B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */; };
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013TalksViewController.m */; };
@@ -83,6 +84,7 @@
 		B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013Tests.m; sourceTree = "<group>"; };
 		B38027C117E1158900B065D7 /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
 		B38027C217E1158900B065D7 /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
+		B38027C417E1179D00B065D7 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		B3CB79D517CBEC09008F514B /* RubyShift2013.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RubyShift2013.xcdatamodel; sourceTree = "<group>"; };
 		B3CB79E417CBF1B3008F514B /* RubyShift2013SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakersViewController.h; path = Controllers/RubyShift2013SpeakersViewController.h; sourceTree = "<group>"; };
 		B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakersViewController.m; path = Controllers/RubyShift2013SpeakersViewController.m; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		B333DE61178317B2005C7D48 /* RubyShift2013 */ = {
 			isa = PBXGroup;
 			children = (
+				B38027C417E1179D00B065D7 /* speaker.png */,
 				B3CB79E317CBF190008F514B /* Controllers */,
 				B3CB79D017CBEBBB008F514B /* Models */,
 				B333DE6A178317B2005C7D48 /* RubyShift2013AppDelegate.h */,
@@ -339,6 +342,7 @@
 				B333DE7F178317B2005C7D48 /* first@2x.png in Resources */,
 				B333DE84178317B2005C7D48 /* second.png in Resources */,
 				B333DE86178317B2005C7D48 /* second@2x.png in Resources */,
+				B38027C517E1179D00B065D7 /* speaker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
