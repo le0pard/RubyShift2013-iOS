@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     if (self.speaker){
+        self.speakerFullName.text = [[self speaker] valueForKey:@"speakerFullName"];
         [self.speakerPhoto setImageWithURL:[NSURL URLWithString:[[self speaker] valueForKey:@"speakerPhoto"]]
                           placeholderImage:[UIImage imageNamed:@"speaker.png"]];
     }
