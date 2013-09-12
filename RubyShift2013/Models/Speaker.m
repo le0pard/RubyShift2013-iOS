@@ -19,4 +19,12 @@
 @dynamic speakerThumb;
 @dynamic talks;
 
+- (NSString *)talksTitle {
+    NSMutableString *result = [NSMutableString stringWithString:@""];
+    for (Talk *talk in self.talks) {
+        [result appendFormat:@"%@ ", [talk valueForKey:@"talkTitle"]];
+    }
+    return result;
+}
+
 @end

@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSString * speakerPhoto;
 @property (nonatomic, retain) NSString * speakerThumb;
 @property (nonatomic, retain) NSSet *talks;
+
+- (NSString *)talksTitle;
+
 @end
 
 @interface Speaker (CoreDataGeneratedAccessors)

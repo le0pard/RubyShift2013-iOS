@@ -10,6 +10,7 @@
 #import "RubyShift2013SpeakersViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "Speaker.h"
+#import "RubyShift2013SpeakerDetailsViewController.h"
 
 @interface RubyShift2013SpeakersViewController () <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
@@ -84,6 +85,11 @@
     Speaker *speaker = (Speaker *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [speaker valueForKey:@"speakerFullName"];
     [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"speaker.png"]];
+    
+    if ([speaker.talks count] > 0){
+            
+    }
+    cell.detailTextLabel.text = [speaker talksTitle];
         
     return cell;
 }
@@ -138,6 +144,15 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"speakerCellPressed"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        RubyShift2013SpeakerDetailsViewController *sdv = [segue destinationViewController];
+        sdv.speaker = (Speaker *)[_fetchedResultsController objectAtIndexPath:indexPath];
+    }
 }
 
 @end

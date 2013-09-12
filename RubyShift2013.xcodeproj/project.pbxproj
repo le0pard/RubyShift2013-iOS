@@ -30,6 +30,8 @@
 		B333DE9B178317B2005C7D48 /* RubyShift2013Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */; };
 		B38027C317E1158900B065D7 /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B38027C217E1158900B065D7 /* Talk.m */; };
 		B38027C517E1179D00B065D7 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B38027C417E1179D00B065D7 /* speaker.png */; };
+		B392DC5D17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392DC5C17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m */; };
+		B392DC6017E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392DC5F17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m */; };
 		B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */; };
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013TalksViewController.m */; };
@@ -85,6 +87,10 @@
 		B38027C117E1158900B065D7 /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
 		B38027C217E1158900B065D7 /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
 		B38027C417E1179D00B065D7 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		B392DC5B17E1645800DEAB7D /* RubyShift2013TalkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013TalkDetailsViewController.h; path = Controllers/RubyShift2013TalkDetailsViewController.h; sourceTree = "<group>"; };
+		B392DC5C17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013TalkDetailsViewController.m; path = Controllers/RubyShift2013TalkDetailsViewController.m; sourceTree = "<group>"; };
+		B392DC5E17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakerDetailsViewController.h; path = Controllers/RubyShift2013SpeakerDetailsViewController.h; sourceTree = "<group>"; };
+		B392DC5F17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakerDetailsViewController.m; path = Controllers/RubyShift2013SpeakerDetailsViewController.m; sourceTree = "<group>"; };
 		B3CB79D517CBEC09008F514B /* RubyShift2013.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RubyShift2013.xcdatamodel; sourceTree = "<group>"; };
 		B3CB79E417CBF1B3008F514B /* RubyShift2013SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakersViewController.h; path = Controllers/RubyShift2013SpeakersViewController.h; sourceTree = "<group>"; };
 		B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakersViewController.m; path = Controllers/RubyShift2013SpeakersViewController.m; sourceTree = "<group>"; };
@@ -254,6 +260,10 @@
 				B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */,
 				B3CB79EA17CBF225008F514B /* RubyShift2013StreamViewController.h */,
 				B3CB79EB17CBF225008F514B /* RubyShift2013StreamViewController.m */,
+				B392DC5B17E1645800DEAB7D /* RubyShift2013TalkDetailsViewController.h */,
+				B392DC5C17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m */,
+				B392DC5E17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.h */,
+				B392DC5F17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +428,8 @@
 				B3D966F917D32CB300525FED /* StreamTableViewCell.m in Sources */,
 				B3E3DBE117E0C36F0096C5AF /* Speaker.m in Sources */,
 				B38027C317E1158900B065D7 /* Talk.m in Sources */,
+				B392DC5D17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m in Sources */,
+				B392DC6017E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

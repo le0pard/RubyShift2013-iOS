@@ -10,6 +10,9 @@
 
 @interface RubyShift2013TalksViewController : UITableViewController
 
+@property (nonatomic, strong) NSDate *beginDate;
+@property (nonatomic, strong) NSDate *endDate;
+
 - (IBAction)changeDate:(id)sender;
 
 @end

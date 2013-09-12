@@ -33,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TalkCell" textLabel="mPm-Nv-55U" detailTextLabel="czj-Ng-EBr" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="aRl-Hs-73W">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TalkCell" textLabel="mPm-Nv-55U" detailTextLabel="czj-Ng-EBr" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="aRl-Hs-73W">
                                 <rect key="frame" x="0.0" y="22" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-Nv-55U">
@@ -53,6 +53,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="0Zc-RC-426" kind="push" identifier="talkCellPressed" id="zJO-K2-guo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -74,6 +77,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zh5-22-f7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="-204"/>
+        </scene>
+        <!--Ruby Shift2013 Talk Details View Controller-->
+        <scene sceneID="uWc-Tg-YJt">
+            <objects>
+                <viewController id="0Zc-RC-426" customClass="RubyShift2013TalkDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fK0-JG-k02">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-8H-DYw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="9O9-J4-Q64"/>
+                                    <constraint firstAttribute="width" constant="150" id="GhO-F9-nm8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r6k-8H-DYw" firstAttribute="leading" secondItem="fK0-JG-k02" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QZV-IM-cp9"/>
+                            <constraint firstItem="r6k-8H-DYw" firstAttribute="top" secondItem="fK0-JG-k02" secondAttribute="top" constant="20" symbolic="YES" type="default" id="StR-Yg-Rfd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rAW-j2-c3v"/>
+                    <connections>
+                        <outlet property="speakerPhoto" destination="r6k-8H-DYw" id="jWO-oy-Ixg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvd-vv-5Ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="-204"/>
         </scene>
         <!--Navigation Controller - Talks-->
         <scene sceneID="7OY-aR-EHz">
@@ -103,11 +136,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerCell" textLabel="nuq-al-FYL" detailTextLabel="ecy-pZ-hx1" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="IOc-Ju-mWl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerCell" textLabel="nuq-al-FYL" detailTextLabel="ecy-pZ-hx1" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="IOc-Ju-mWl">
                                 <rect key="frame" x="0.0" y="22" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuq-al-FYL">
@@ -123,6 +156,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="QWq-k9-yXe" kind="push" identifier="speakerCellPressed" id="yDI-ft-c1s"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -131,6 +167,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q04-vF-UDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="459"/>
+        </scene>
+        <!--Ruby Shift2013 Speaker Details View Controller-->
+        <scene sceneID="Xxn-yE-UMq">
+            <objects>
+                <viewController id="QWq-k9-yXe" customClass="RubyShift2013SpeakerDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qN-sn-xTZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="km9-qi-oFy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5J5-OD-fKM"/>
+                                    <constraint firstAttribute="height" constant="151" id="DYt-Ft-AiX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="km9-qi-oFy" firstAttribute="leading" secondItem="6qN-sn-xTZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="38m-Vd-aN9"/>
+                            <constraint firstItem="km9-qi-oFy" firstAttribute="top" secondItem="6qN-sn-xTZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XbB-J8-iWg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nLU-iF-jdu"/>
+                    <connections>
+                        <outlet property="speakerPhoto" destination="km9-qi-oFy" id="tdM-xo-EWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z88-Tb-GAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553" y="463"/>
         </scene>
         <!--Navigation Controller - Speakers-->
         <scene sceneID="wfn-CM-pdT">
@@ -206,24 +272,8 @@
     <resources>
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
+        <image name="speaker.png" width="507" height="512"/>
     </resources>
-    <classes>
-        <class className="RubyShift2013SpeakersViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakersViewController.h"/>
-        </class>
-        <class className="RubyShift2013StreamViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013StreamViewController.h"/>
-        </class>
-        <class className="RubyShift2013TalksViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalksViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDate:"/>
-            </relationships>
-        </class>
-        <class className="StreamTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StreamTableViewCell.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
