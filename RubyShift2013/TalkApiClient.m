@@ -8,7 +8,7 @@
 
 #import "TalkApiClient.h"
 
-static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://localhost:4567/api/v1";
+static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift2013.herokuapp.com/api/v1";
 
 @implementation TalkApiClient
 
