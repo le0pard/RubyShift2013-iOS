@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface RubyShift2013MapViewController : UIViewController <MKMapViewDelegate>
+@interface RubyShift2013MapViewController : UIViewController <MKMapViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+- (void)refetchData;
 
 @end

@@ -44,6 +44,8 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"talks" parameters:nil];
     } else if ([fetchRequest.entityName isEqualToString:@"Speaker"]) {
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"speakers" parameters:nil];
+    } else if ([fetchRequest.entityName isEqualToString:@"MapAnnotation"]) {
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"map_annotations" parameters:nil];
     }
     
     return mutableURLRequest;
@@ -67,6 +69,13 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift
         [mutablePropertyValues setValue:[representation valueForKey:@"full_name"] forKey:@"speakerFullName"];
         [mutablePropertyValues setValue:[representation valueForKey:@"bio"] forKey:@"speakerBio"];
         [mutablePropertyValues setValue:[representation valueForKey:@"photo"] forKey:@"speakerPhoto"];
+    } else if ([entity.name isEqualToString:@"MapAnnotation"]) {
+        [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"id"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"annotTitle"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"subtitle"] forKey:@"annotSubtitle"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"icon"] forKey:@"annotIcon"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"lat"] forKey:@"lat"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"lng"] forKey:@"lng"];
     }
     
     return mutablePropertyValues;

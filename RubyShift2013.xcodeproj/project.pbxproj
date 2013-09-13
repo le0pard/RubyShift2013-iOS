@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		12920A1A7AEF4606A1605BA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A53B4EBF42746F68232D625 /* libPods.a */; };
+		B31F18FB17E2E54000827019 /* new_place_origin.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18F817E2E54000827019 /* new_place_origin.png */; };
+		B31F18FC17E2E54000827019 /* new_place.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18F917E2E54000827019 /* new_place.png */; };
+		B31F18FD17E2E54000827019 /* new_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18FA17E2E54000827019 /* new_place@2x.png */; };
 		B333DE5C178317B2005C7D48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5B178317B2005C7D48 /* UIKit.framework */; };
 		B333DE5E178317B2005C7D48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5D178317B2005C7D48 /* Foundation.framework */; };
 		B333DE60178317B2005C7D48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5F178317B2005C7D48 /* CoreGraphics.framework */; };
@@ -28,13 +31,13 @@
 		B333DE90178317B2005C7D48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5D178317B2005C7D48 /* Foundation.framework */; };
 		B333DE98178317B2005C7D48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B333DE96178317B2005C7D48 /* InfoPlist.strings */; };
 		B333DE9B178317B2005C7D48 /* RubyShift2013Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */; };
+		B354F79617E2D63800419421 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B354F79517E2D63800419421 /* MapAnnotation.m */; };
 		B38027C317E1158900B065D7 /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B38027C217E1158900B065D7 /* Talk.m */; };
 		B38027C517E1179D00B065D7 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B38027C417E1179D00B065D7 /* speaker.png */; };
 		B392DC5D17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392DC5C17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m */; };
 		B392DC6017E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392DC5F17E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m */; };
 		B39523B717E2C1DE00C55651 /* RubyShift2013MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39523B617E2C1DD00C55651 /* RubyShift2013MapViewController.m */; };
 		B39523BD17E2C38000C55651 /* RubyShift2013MainPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = B39523BC17E2C38000C55651 /* RubyShift2013MainPlace.m */; };
-		B39523C017E2C70300C55651 /* RubyShift2013PartyPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = B39523BF17E2C70300C55651 /* RubyShift2013PartyPlace.m */; };
 		B39523C317E2C8F200C55651 /* main_place.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C117E2C8F200C55651 /* main_place.png */; };
 		B39523C417E2C8F200C55651 /* party_place.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C217E2C8F200C55651 /* party_place.png */; };
 		B39523C917E2CCB300C55651 /* main_place_origin.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C517E2CCB300C55651 /* main_place_origin.png */; };
@@ -68,6 +71,9 @@
 
 /* Begin PBXFileReference section */
 		3A53B4EBF42746F68232D625 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31F18F817E2E54000827019 /* new_place_origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_place_origin.png; sourceTree = "<group>"; };
+		B31F18F917E2E54000827019 /* new_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_place.png; sourceTree = "<group>"; };
+		B31F18FA17E2E54000827019 /* new_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_place@2x.png"; sourceTree = "<group>"; };
 		B333DE58178317B2005C7D48 /* RubyShift2013.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyShift2013.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B333DE5B178317B2005C7D48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B333DE5D178317B2005C7D48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +99,8 @@
 		B333DE97178317B2005C7D48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B333DE99178317B2005C7D48 /* RubyShift2013Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyShift2013Tests.h; sourceTree = "<group>"; };
 		B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013Tests.m; sourceTree = "<group>"; };
+		B354F79417E2D63800419421 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = Models/MapAnnotation.h; sourceTree = "<group>"; };
+		B354F79517E2D63800419421 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = Models/MapAnnotation.m; sourceTree = "<group>"; };
 		B38027C117E1158900B065D7 /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
 		B38027C217E1158900B065D7 /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
 		B38027C417E1179D00B065D7 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
@@ -104,8 +112,6 @@
 		B39523B617E2C1DD00C55651 /* RubyShift2013MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013MapViewController.m; path = Controllers/RubyShift2013MapViewController.m; sourceTree = "<group>"; };
 		B39523BB17E2C38000C55651 /* RubyShift2013MainPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubyShift2013MainPlace.h; sourceTree = "<group>"; };
 		B39523BC17E2C38000C55651 /* RubyShift2013MainPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013MainPlace.m; sourceTree = "<group>"; };
-		B39523BE17E2C70300C55651 /* RubyShift2013PartyPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubyShift2013PartyPlace.h; sourceTree = "<group>"; };
-		B39523BF17E2C70300C55651 /* RubyShift2013PartyPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013PartyPlace.m; sourceTree = "<group>"; };
 		B39523C117E2C8F200C55651 /* main_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_place.png; sourceTree = "<group>"; };
 		B39523C217E2C8F200C55651 /* party_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party_place.png; sourceTree = "<group>"; };
 		B39523C517E2CCB300C55651 /* main_place_origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_place_origin.png; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 		B39523BA17E2C35300C55651 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				B31F18F817E2E54000827019 /* new_place_origin.png */,
+				B31F18F917E2E54000827019 /* new_place.png */,
+				B31F18FA17E2E54000827019 /* new_place@2x.png */,
 				B39523C517E2CCB300C55651 /* main_place_origin.png */,
 				B39523C617E2CCB300C55651 /* main_place@2x.png */,
 				B39523C717E2CCB300C55651 /* party_place_origin.png */,
@@ -272,8 +281,6 @@
 				B39523C217E2C8F200C55651 /* party_place.png */,
 				B39523BB17E2C38000C55651 /* RubyShift2013MainPlace.h */,
 				B39523BC17E2C38000C55651 /* RubyShift2013MainPlace.m */,
-				B39523BE17E2C70300C55651 /* RubyShift2013PartyPlace.h */,
-				B39523BF17E2C70300C55651 /* RubyShift2013PartyPlace.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -282,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */,
+				B354F79417E2D63800419421 /* MapAnnotation.h */,
+				B354F79517E2D63800419421 /* MapAnnotation.m */,
 				B38027C117E1158900B065D7 /* Talk.h */,
 				B38027C217E1158900B065D7 /* Talk.m */,
 				B3E3DBDF17E0C36F0096C5AF /* Speaker.h */,
@@ -400,6 +409,9 @@
 				B39523CA17E2CCB300C55651 /* main_place@2x.png in Resources */,
 				B39523CB17E2CCB300C55651 /* party_place_origin.png in Resources */,
 				B39523CC17E2CCB300C55651 /* party_place@2x.png in Resources */,
+				B31F18FB17E2E54000827019 /* new_place_origin.png in Resources */,
+				B31F18FC17E2E54000827019 /* new_place.png in Resources */,
+				B31F18FD17E2E54000827019 /* new_place@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +491,7 @@
 				B392DC6017E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m in Sources */,
 				B39523B717E2C1DE00C55651 /* RubyShift2013MapViewController.m in Sources */,
 				B39523BD17E2C38000C55651 /* RubyShift2013MainPlace.m in Sources */,
-				B39523C017E2C70300C55651 /* RubyShift2013PartyPlace.m in Sources */,
+				B354F79617E2D63800419421 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

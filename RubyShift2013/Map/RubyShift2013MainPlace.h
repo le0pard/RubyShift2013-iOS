@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) NSString *title;
 @property (weak, nonatomic) NSString *subtitle;
+@property (weak, nonatomic) NSString *icon;
 
 @end
