@@ -49,9 +49,19 @@
     [self refetchData];
     
     [self updatedAnnotations];
+    
+    // refresh button
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                           target:self
+                                                                                           action:@selector(refetchData)];
 }
 
 - (void) updatedAnnotations {
+    
+    if ([self.mapView.annotations count] > 0){
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    }
+    
     NSArray *fetchedData = [_fetchedResultsController fetchedObjects];
     
     NSMutableArray *lats = [NSMutableArray new];

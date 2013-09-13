@@ -84,6 +84,8 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift
     
     if ([representation valueForKey:@"is_deleted"] && [[representation valueForKey:@"is_deleted"] isEqual:[NSNumber numberWithBool:YES]]){
         [mutablePropertyValues setValue:[NSNumber numberWithBool:YES] forKey:@"isFullDeleted"];
+    } else {
+        [mutablePropertyValues setValue:[NSNumber numberWithBool:NO] forKey:@"isFullDeleted"];
     }
     
     return mutablePropertyValues;
