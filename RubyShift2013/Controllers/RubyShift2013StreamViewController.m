@@ -150,7 +150,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *twit = [self.twitterStatuses objectAtIndex:indexPath.row];
-    return [StreamTableViewCell heightForCellWithTwit:twit];
+    return [StreamTableViewCell heightForCellWithTwit:twit andWidth:self.view.bounds.size.width];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

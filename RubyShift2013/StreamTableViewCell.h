@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSDictionary *twitterStatus;
 
-+ (CGFloat)heightForCellWithTwit:(NSDictionary *)twitterStatus;
++ (CGFloat)heightForCellWithTwit:(NSDictionary *)twitterStatus andWidth:(CGFloat) width;
 
 @end
