@@ -42,6 +42,11 @@
 
 - (void) setInfo {
     
+    CGFloat fontSize = 14.0;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        fontSize = 20.0;
+    }
+    
 	// Do any additional setup after loading the view.
     if (self.speaker){
         
@@ -52,7 +57,7 @@
         self.speakerFullName.lineBreakMode = NSLineBreakByWordWrapping;
         self.speakerFullName.textAlignment = NSTextAlignmentCenter;
         [self.speakerFullName setNumberOfLines:3];
-        [self.speakerFullName setFont:[UIFont systemFontOfSize:20]];
+        [self.speakerFullName setFont:[UIFont systemFontOfSize:fontSize + 4]];
         [self.scrollView addSubview:self.speakerFullName];
         
         // photo
@@ -72,6 +77,7 @@
             [button setTitle:[talk valueForKey:@"talkTitle"] forState:UIControlStateNormal];
             button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
             [button.titleLabel setNumberOfLines:1];
+            [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize + 2]];
             [tmpArray addObject:button];
         }
         
@@ -84,11 +90,11 @@
         self.speakerBio.lineBreakMode = NSLineBreakByWordWrapping;
         self.speakerBio.text = [[self speaker] valueForKey:@"speakerBio"];
         [self.speakerBio setNumberOfLines:0];
-        [self.speakerBio setFont:[UIFont systemFontOfSize:14]];
+        [self.speakerBio setFont:[UIFont systemFontOfSize:fontSize]];
         [self.scrollView addSubview:self.speakerBio];
 
     }
-    [self setSizeAndPosition];
+    //[self setSizeAndPosition];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -96,7 +102,7 @@
     [self setSizeAndPosition];
 }
 
-- (void) setSizeAndPosition {
+- (void) setSizeAndPosition {    
     self.speakerFullName.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 30);
     self.speakerPhoto.frame = CGRectMake(20, 50, 120, 120);
     // talk buttons

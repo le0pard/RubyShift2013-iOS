@@ -11,11 +11,12 @@
 
 @implementation MapAnnotation
 
+@dynamic annotIcon;
+@dynamic annotSubtitle;
 @dynamic annotTitle;
 @dynamic id;
-@dynamic annotSubtitle;
-@dynamic annotIcon;
 @dynamic lat;
 @dynamic lng;
+@dynamic isFullDeleted;
 
 @end

@@ -84,7 +84,7 @@
             <objects>
                 <viewController storyboardIdentifier="" id="0Zc-RC-426" customClass="RubyShift2013TalkDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fK0-JG-k02">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -101,7 +101,7 @@
         <scene sceneID="7OY-aR-EHz">
             <objects>
                 <navigationController definesPresentationContext="YES" id="WnF-ws-17Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Talks" image="first.png" id="jZV-dw-8Ji"/>
+                    <tabBarItem key="tabBarItem" title="Talks" image="calendar.png" id="jZV-dw-8Ji"/>
                     <navigationItem key="navigationItem" id="EjW-GC-Qje">
                         <nil key="title"/>
                     </navigationItem>
@@ -188,7 +188,7 @@
         <scene sceneID="cHy-yP-q1a">
             <objects>
                 <navigationController definesPresentationContext="YES" id="kF1-PL-Kyb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="second.png" id="ESe-3b-kRd"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map-pin.png" id="ESe-3b-kRd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="61i-Pw-R7P">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -205,7 +205,7 @@
             <objects>
                 <viewController storyboardIdentifier="" id="QWq-k9-yXe" customClass="RubyShift2013SpeakerDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6qN-sn-xTZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -222,7 +222,7 @@
         <scene sceneID="wfn-CM-pdT">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7Gf-NF-2Ek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speakers" image="second.png" id="TVM-8d-YYy"/>
+                    <tabBarItem key="tabBarItem" title="Speakers" image="man.png" id="TVM-8d-YYy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="slC-CZ-eTf">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -243,7 +243,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="gCK-eq-iuq" detailTextLabel="G4j-7T-x5R" rowHeight="58" style="IBUITableViewCellStyleSubtitle" id="Nzp-Om-bCp" customClass="StreamTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="TwCell" textLabel="gCK-eq-iuq" detailTextLabel="G4j-7T-x5R" rowHeight="58" style="IBUITableViewCellStyleSubtitle" id="Nzp-Om-bCp" customClass="StreamTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -276,7 +276,7 @@
         <scene sceneID="nZ4-MI-GBS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="62H-Dk-WRO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stream" image="first.png" id="G8C-al-kE6"/>
+                    <tabBarItem key="tabBarItem" title="Stream" image="twitter.png" id="G8C-al-kE6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ho5-5r-pJL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -290,8 +290,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first.png" width="30" height="30"/>
-        <image name="second.png" width="30" height="30"/>
+        <image name="calendar.png" width="29" height="30"/>
+        <image name="man.png" width="30" height="30"/>
+        <image name="map-pin.png" width="30" height="30"/>
+        <image name="twitter.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -337,7 +339,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BT2-aE-Cxl"/>
+        <segue reference="zJO-K2-guo"/>
         <segue reference="C3j-Ab-MhG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,6 +31,10 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     
+    [self setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        self.operationQueue.suspended = (status == AFNetworkReachabilityStatusNotReachable);
+    }];
+    
     return self;
 }
 
@@ -76,6 +80,10 @@ static NSString * const kAFIncrementalStoreAPIBaseURLString = @"http://rubyshift
         [mutablePropertyValues setValue:[representation valueForKey:@"icon"] forKey:@"annotIcon"];
         [mutablePropertyValues setValue:[representation valueForKey:@"lat"] forKey:@"lat"];
         [mutablePropertyValues setValue:[representation valueForKey:@"lng"] forKey:@"lng"];
+    }
+    
+    if ([representation valueForKey:@"is_deleted"] && [[representation valueForKey:@"is_deleted"] isEqual:[NSNumber numberWithBool:YES]]){
+        [mutablePropertyValues setValue:[NSNumber numberWithBool:YES] forKey:@"isFullDeleted"];
     }
     
     return mutablePropertyValues;

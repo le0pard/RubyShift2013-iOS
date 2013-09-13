@@ -17,6 +17,7 @@
 @dynamic speakerFullName;
 @dynamic speakerPhoto;
 @dynamic speakerThumb;
+@dynamic isFullDeleted;
 @dynamic talks;
 
 - (NSString *)talksTitle {

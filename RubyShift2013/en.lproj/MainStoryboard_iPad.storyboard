@@ -14,15 +14,326 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="Hha-CS-cNl" kind="relationship" relationship="viewControllers" id="nwZ-x9-amr"/>
+                        <segue destination="6aM-QX-Wii" kind="relationship" relationship="viewControllers" id="6ZW-AD-Ooo"/>
+                        <segue destination="ks5-zw-Tob" kind="relationship" relationship="viewControllers" id="QSR-om-rxf"/>
+                        <segue destination="x3a-Lc-CPs" kind="relationship" relationship="viewControllers" id="YuL-0w-HP1"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="718"/>
+            <point key="canvasLocation" x="735" y="366"/>
+        </scene>
+        <!--Ruby Shift2013 Talks View Controller-->
+        <scene sceneID="uD0-BZ-64c">
+            <objects>
+                <tableViewController id="uhn-EM-qPB" customClass="RubyShift2013TalksViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="gUg-Ty-cf8">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TalkCell" textLabel="3qa-Og-64x" detailTextLabel="bTt-Ah-xXe" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="zS0-Oc-KcA">
+                                <rect key="frame" x="0.0" y="22" width="768" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="748" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qa-Og-64x">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTt-Ah-xXe">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="r3T-ry-3lg" kind="push" identifier="talkCellPressed" id="qp6-oO-9Hz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="X4d-go-dHE">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6un-h0-HOP">
+                            <rect key="frame" x="230" y="7" width="307" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="27.09"/>
+                                <segment title="28.09"/>
+                            </segments>
+                            <connections>
+                                <action selector="changeDate:" destination="uhn-EM-qPB" eventType="valueChanged" id="a79-60-XAn"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u95-Wd-JpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="-151"/>
+        </scene>
+        <!--Ruby Shift2013 Talk Details View Controller-->
+        <scene sceneID="6o3-R4-9OM">
+            <objects>
+                <viewController id="r3T-ry-3lg" customClass="RubyShift2013TalkDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hxw-4z-0EK">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dnd-Lk-61M"/>
+                    <connections>
+                        <segue destination="nsF-uF-L1r" kind="push" identifier="speakerPressed" id="JXZ-yi-KnI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="anz-70-g3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4010" y="-287"/>
+        </scene>
+        <!--Ruby Shift2013 Speakers View Controller - Speakers-->
+        <scene sceneID="9Q8-Dl-jH6">
+            <objects>
+                <tableViewController id="dEw-a7-OnC" customClass="RubyShift2013SpeakersViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="Il6-1B-Vf0">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerCell" textLabel="Gia-sa-ESO" detailTextLabel="HuL-K8-01k" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="ngE-am-hLU">
+                                <rect key="frame" x="0.0" y="22" width="768" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="748" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gia-sa-ESO">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuL-K8-01k">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="nsF-uF-L1r" kind="push" identifier="speakerCellPressed" id="jVL-SX-WPE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Speakers" id="xoQ-F3-0of"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2o-EH-3gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="1005"/>
+        </scene>
+        <!--Ruby Shift2013 Speaker Details View Controller-->
+        <scene sceneID="WSq-UI-AGi">
+            <objects>
+                <viewController id="nsF-uF-L1r" customClass="RubyShift2013SpeakerDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="syR-dG-7uT">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TF1-e5-VHv"/>
+                    <connections>
+                        <segue destination="r3T-ry-3lg" kind="push" identifier="talkPressed" id="n7Z-Ry-97y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tsf-sh-uh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4022" y="994"/>
+        </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="qeM-qT-p7z">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ks5-zw-Tob" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map-pin.png" id="HYr-G0-9jw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TY6-jj-K3J">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1nX-tx-wAz" kind="relationship" relationship="rootViewController" id="UgP-nz-sqe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCj-tc-Czc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="2133"/>
+        </scene>
+        <!--Ruby Shift2013 Map View Controller - Map-->
+        <scene sceneID="g9U-qi-bnD">
+            <objects>
+                <viewController id="1nX-tx-wAz" customClass="RubyShift2013MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="894-nb-ldR">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LZh-2O-Rbf"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LZh-2O-Rbf" firstAttribute="trailing" secondItem="894-nb-ldR" secondAttribute="trailing" type="default" id="AaX-D9-qCq"/>
+                            <constraint firstItem="LZh-2O-Rbf" firstAttribute="bottom" secondItem="894-nb-ldR" secondAttribute="bottom" type="default" id="bJf-FZ-k6b"/>
+                            <constraint firstItem="LZh-2O-Rbf" firstAttribute="leading" secondItem="894-nb-ldR" secondAttribute="leading" type="default" id="jD6-va-eQD"/>
+                            <constraint firstItem="LZh-2O-Rbf" firstAttribute="top" secondItem="894-nb-ldR" secondAttribute="top" type="default" id="yME-Yw-XOf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="cPL-ea-af1"/>
+                    <connections>
+                        <outlet property="mapView" destination="LZh-2O-Rbf" id="9Hd-Qx-R9N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPS-nn-ULg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="2134"/>
+        </scene>
+        <!--Ruby Shift2013 Stream View Controller - Stream-->
+        <scene sceneID="kl8-h3-Wke">
+            <objects>
+                <tableViewController id="S7q-P3-Tmu" customClass="RubyShift2013StreamViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pKh-WT-fUQ">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TwCell" textLabel="RqS-q8-9CO" detailTextLabel="Goa-z2-CUA" style="IBUITableViewCellStyleSubtitle" id="kNk-hh-hc7">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqS-q8-9CO">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-z2-CUA">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stream" id="b3s-ak-lYv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58u-kf-SOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="3302"/>
+        </scene>
+        <!--Navigation Controller - Stream-->
+        <scene sceneID="3FT-QN-XaL">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="x3a-Lc-CPs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stream" image="twitter.png" id="SNY-Na-t82"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g8r-Dz-lkf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="S7q-P3-Tmu" kind="relationship" relationship="rootViewController" id="TQe-4k-mJs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5Q-xm-ohf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="3302"/>
+        </scene>
+        <!--Navigation Controller - Speakers-->
+        <scene sceneID="sey-ja-zKP">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="6aM-QX-Wii" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Speakers" image="man.png" id="Fmx-Te-6gO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Kp-MJ-CqW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dEw-a7-OnC" kind="relationship" relationship="rootViewController" id="FXJ-5k-piK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg7-A8-QcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="1005"/>
+        </scene>
+        <!--Navigation Controller - Talks-->
+        <scene sceneID="4iF-Pc-9Yp">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Hha-CS-cNl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Talks" image="calendar.png" id="Iuc-9w-NIK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XIM-w2-oaq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uhn-EM-qPB" kind="relationship" relationship="rootViewController" id="dek-YI-NTD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tF6-Rt-ca7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="-151"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar.png" width="29" height="30"/>
+        <image name="man.png" width="30" height="30"/>
+        <image name="map-pin.png" width="30" height="30"/>
+        <image name="twitter.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RubyShift2013MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013SpeakerDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakerDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="talkPressed:"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013SpeakersViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakersViewController.h"/>
+        </class>
+        <class className="RubyShift2013StreamViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013StreamViewController.h"/>
+        </class>
+        <class className="RubyShift2013TalkDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalkDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="speakerPressed:"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013TalksViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="qp6-oO-9Hz"/>
+        <segue reference="jVL-SX-WPE"/>
+    </inferredMetricsTieBreakers>
 </document>

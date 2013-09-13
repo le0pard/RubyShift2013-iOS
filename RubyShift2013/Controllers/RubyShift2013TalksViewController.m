@@ -80,7 +80,7 @@
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Talk"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"talkDate" ascending:YES]];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@)", self.beginDate, self.endDate]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(talkDate >= %@) AND (talkDate < %@) AND (isFullDeleted == %@)", self.beginDate, self.endDate, [NSNumber numberWithBool:NO]]];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;

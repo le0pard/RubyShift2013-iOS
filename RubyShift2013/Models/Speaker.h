@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * speakerFullName;
 @property (nonatomic, retain) NSString * speakerPhoto;
 @property (nonatomic, retain) NSString * speakerThumb;
+@property (nonatomic, retain) NSNumber * isFullDeleted;
 @property (nonatomic, retain) NSSet *talks;
 
 - (NSString *)talksTitle;

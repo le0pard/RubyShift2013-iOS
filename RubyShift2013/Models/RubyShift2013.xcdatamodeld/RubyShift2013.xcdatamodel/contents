@@ -5,11 +5,13 @@
         <attribute name="annotSubtitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="annotTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFullDeleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Speaker" representedClassName="Speaker" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFullDeleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="speakerBio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerFullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerPhoto" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,6 +20,7 @@
     </entity>
     <entity name="Talk" representedClassName="Talk" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFullDeleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="talkDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="talkTimeRange" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,8 +28,8 @@
         <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Speaker" inverseName="talks" inverseEntity="Speaker" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Speaker" positionX="160" positionY="-9" width="128" height="133"/>
-        <element name="Talk" positionX="448" positionY="-45" width="128" height="135"/>
-        <element name="MapAnnotation" positionX="189" positionY="-135" width="128" height="133"/>
+        <element name="MapAnnotation" positionX="304" positionY="-132" width="128" height="150"/>
+        <element name="Speaker" positionX="160" positionY="-9" width="128" height="150"/>
+        <element name="Talk" positionX="448" positionY="-45" width="128" height="150"/>
     </elements>
 </model>

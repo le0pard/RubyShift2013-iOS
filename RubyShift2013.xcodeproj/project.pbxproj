@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12920A1A7AEF4606A1605BA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A53B4EBF42746F68232D625 /* libPods.a */; };
+		B3169F4117E3604E002CCA60 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3169F4017E3604E002CCA60 /* MapAnnotation.m */; };
+		B3169F4817E36B39002CCA60 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B3169F4417E36B39002CCA60 /* calendar.png */; };
+		B3169F4917E36B39002CCA60 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = B3169F4517E36B39002CCA60 /* man.png */; };
+		B3169F4A17E36B39002CCA60 /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = B3169F4617E36B39002CCA60 /* map-pin.png */; };
+		B3169F4B17E36B39002CCA60 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B3169F4717E36B39002CCA60 /* twitter.png */; };
 		B31F18FB17E2E54000827019 /* new_place_origin.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18F817E2E54000827019 /* new_place_origin.png */; };
 		B31F18FC17E2E54000827019 /* new_place.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18F917E2E54000827019 /* new_place.png */; };
 		B31F18FD17E2E54000827019 /* new_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F18FA17E2E54000827019 /* new_place@2x.png */; };
@@ -31,7 +36,6 @@
 		B333DE90178317B2005C7D48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B333DE5D178317B2005C7D48 /* Foundation.framework */; };
 		B333DE98178317B2005C7D48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B333DE96178317B2005C7D48 /* InfoPlist.strings */; };
 		B333DE9B178317B2005C7D48 /* RubyShift2013Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */; };
-		B354F79617E2D63800419421 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B354F79517E2D63800419421 /* MapAnnotation.m */; };
 		B38027C317E1158900B065D7 /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = B38027C217E1158900B065D7 /* Talk.m */; };
 		B38027C517E1179D00B065D7 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B38027C417E1179D00B065D7 /* speaker.png */; };
 		B392DC5D17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392DC5C17E1645900DEAB7D /* RubyShift2013TalkDetailsViewController.m */; };
@@ -71,6 +75,12 @@
 
 /* Begin PBXFileReference section */
 		3A53B4EBF42746F68232D625 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3169F3F17E3604E002CCA60 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = Models/MapAnnotation.h; sourceTree = "<group>"; };
+		B3169F4017E3604E002CCA60 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = Models/MapAnnotation.m; sourceTree = "<group>"; };
+		B3169F4417E36B39002CCA60 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		B3169F4517E36B39002CCA60 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		B3169F4617E36B39002CCA60 /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
+		B3169F4717E36B39002CCA60 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		B31F18F817E2E54000827019 /* new_place_origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_place_origin.png; sourceTree = "<group>"; };
 		B31F18F917E2E54000827019 /* new_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_place.png; sourceTree = "<group>"; };
 		B31F18FA17E2E54000827019 /* new_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_place@2x.png"; sourceTree = "<group>"; };
@@ -99,8 +109,6 @@
 		B333DE97178317B2005C7D48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B333DE99178317B2005C7D48 /* RubyShift2013Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyShift2013Tests.h; sourceTree = "<group>"; };
 		B333DE9A178317B2005C7D48 /* RubyShift2013Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyShift2013Tests.m; sourceTree = "<group>"; };
-		B354F79417E2D63800419421 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = Models/MapAnnotation.h; sourceTree = "<group>"; };
-		B354F79517E2D63800419421 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = Models/MapAnnotation.m; sourceTree = "<group>"; };
 		B38027C117E1158900B065D7 /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Talk.h; path = Models/Talk.h; sourceTree = "<group>"; };
 		B38027C217E1158900B065D7 /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Talk.m; path = Models/Talk.m; sourceTree = "<group>"; };
 		B38027C417E1179D00B065D7 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
@@ -171,6 +179,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3169F4217E36B39002CCA60 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B3169F4317E36B39002CCA60 /* Tabs */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B3169F4317E36B39002CCA60 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				B3169F4417E36B39002CCA60 /* calendar.png */,
+				B3169F4517E36B39002CCA60 /* man.png */,
+				B3169F4617E36B39002CCA60 /* map-pin.png */,
+				B3169F4717E36B39002CCA60 /* twitter.png */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		B333DE4F178317B2005C7D48 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +238,7 @@
 		B333DE61178317B2005C7D48 /* RubyShift2013 */ = {
 			isa = PBXGroup;
 			children = (
+				B3169F4217E36B39002CCA60 /* Assets */,
 				B39523BA17E2C35300C55651 /* Map */,
 				B38027C417E1179D00B065D7 /* speaker.png */,
 				B3CB79E317CBF190008F514B /* Controllers */,
@@ -289,8 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */,
-				B354F79417E2D63800419421 /* MapAnnotation.h */,
-				B354F79517E2D63800419421 /* MapAnnotation.m */,
+				B3169F3F17E3604E002CCA60 /* MapAnnotation.h */,
+				B3169F4017E3604E002CCA60 /* MapAnnotation.m */,
 				B38027C117E1158900B065D7 /* Talk.h */,
 				B38027C217E1158900B065D7 /* Talk.m */,
 				B3E3DBDF17E0C36F0096C5AF /* Speaker.h */,
@@ -412,6 +440,10 @@
 				B31F18FB17E2E54000827019 /* new_place_origin.png in Resources */,
 				B31F18FC17E2E54000827019 /* new_place.png in Resources */,
 				B31F18FD17E2E54000827019 /* new_place@2x.png in Resources */,
+				B3169F4817E36B39002CCA60 /* calendar.png in Resources */,
+				B3169F4917E36B39002CCA60 /* man.png in Resources */,
+				B3169F4A17E36B39002CCA60 /* map-pin.png in Resources */,
+				B3169F4B17E36B39002CCA60 /* twitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +523,7 @@
 				B392DC6017E1680500DEAB7D /* RubyShift2013SpeakerDetailsViewController.m in Sources */,
 				B39523B717E2C1DE00C55651 /* RubyShift2013MapViewController.m in Sources */,
 				B39523BD17E2C38000C55651 /* RubyShift2013MainPlace.m in Sources */,
-				B354F79617E2D63800419421 /* MapAnnotation.m in Sources */,
+				B3169F4117E3604E002CCA60 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,9 +646,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyShift2013/RubyShift2013-Prefix.pch";
 				INFOPLIST_FILE = "RubyShift2013/RubyShift2013-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -630,9 +662,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyShift2013/RubyShift2013-Prefix.pch";
 				INFOPLIST_FILE = "RubyShift2013/RubyShift2013-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -18,5 +18,6 @@
 @dynamic talkTitle;
 @dynamic talkTimeRange;
 @dynamic speaker;
+@dynamic isFullDeleted;
 
 @end

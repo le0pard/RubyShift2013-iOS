@@ -41,6 +41,7 @@
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"MapAnnotation"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"isFullDeleted == %@", [NSNumber numberWithBool:NO]]];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"MapAnnotations"];
     _fetchedResultsController.delegate = self;
@@ -70,16 +71,18 @@
     
     [lats sortUsingSelector:@selector(compare:)];
     [lngs sortUsingSelector:@selector(compare:)];
-    
-    double smallestLat = [lats[0] doubleValue];
-    double smallestLng = [lngs[0] doubleValue];
-    double biggestLat  = [[lats lastObject] doubleValue];
-    double biggestLng  = [[lngs lastObject] doubleValue];
-    
-    CLLocationCoordinate2D annotationsCenter = CLLocationCoordinate2DMake((biggestLat + smallestLat) / 2, (biggestLng + smallestLng) / 2);
-    MKCoordinateSpan annotationsSpan = MKCoordinateSpanMake((biggestLat - smallestLat), (biggestLng - smallestLng));
-    MKCoordinateRegion region = MKCoordinateRegionMake(annotationsCenter, annotationsSpan);
-    [self.mapView setRegion:region];
+
+    if ([lats count] > 0 && [lngs count] > 0) {
+        double smallestLat = [lats[0] doubleValue];
+        double smallestLng = [lngs[0] doubleValue];
+        double biggestLat  = [[lats lastObject] doubleValue];
+        double biggestLng  = [[lngs lastObject] doubleValue];
+        
+        CLLocationCoordinate2D annotationsCenter = CLLocationCoordinate2DMake((biggestLat + smallestLat) / 2, (biggestLng + smallestLng) / 2);
+        MKCoordinateSpan annotationsSpan = MKCoordinateSpanMake((biggestLat - smallestLat), (biggestLng - smallestLng));
+        MKCoordinateRegion region = MKCoordinateRegionMake(annotationsCenter, annotationsSpan);
+        [self.mapView setRegion:region];
+    }
 }
 
 

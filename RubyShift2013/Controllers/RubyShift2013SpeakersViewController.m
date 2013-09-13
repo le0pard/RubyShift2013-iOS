@@ -54,6 +54,7 @@
 - (void) initFetchController {    
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Speaker"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"speakerFullName" ascending:YES]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"isFullDeleted == %@", [NSNumber numberWithBool:NO]]];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:@"Speakers"];
     _fetchedResultsController.delegate = self;

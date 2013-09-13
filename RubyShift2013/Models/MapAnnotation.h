@@ -12,11 +12,12 @@
 
 @interface MapAnnotation : NSManagedObject
 
+@property (nonatomic, retain) NSString * annotIcon;
+@property (nonatomic, retain) NSString * annotSubtitle;
 @property (nonatomic, retain) NSString * annotTitle;
 @property (nonatomic, retain) NSNumber * id;
-@property (nonatomic, retain) NSString * annotSubtitle;
-@property (nonatomic, retain) NSString * annotIcon;
 @property (nonatomic, retain) NSNumber * lat;
 @property (nonatomic, retain) NSNumber * lng;
+@property (nonatomic, retain) NSNumber * isFullDeleted;
 
 @end
