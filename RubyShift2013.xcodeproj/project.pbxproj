@@ -60,6 +60,10 @@
 		B3CB79FA17CBFA2F008F514B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79F917CBFA2F008F514B /* MobileCoreServices.framework */; };
 		B3CB79FC17CBFA36008F514B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */; };
 		B3D966F917D32CB300525FED /* StreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D966F817D32CB300525FED /* StreamTableViewCell.m */; };
+		B3DE682717E3861400DFC2F3 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DE682617E3861400DFC2F3 /* 57.png */; };
+		B3DE682917E3862700DFC2F3 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DE682817E3862700DFC2F3 /* 114.png */; };
+		B3DE682B17E3863200DFC2F3 /* 72.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DE682A17E3863200DFC2F3 /* 72.png */; };
+		B3DE682D17E3863E00DFC2F3 /* 144.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DE682C17E3863E00DFC2F3 /* 144.png */; };
 		B3E3DBE117E0C36F0096C5AF /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E3DBE017E0C36F0096C5AF /* Speaker.m */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +148,10 @@
 		B3CB79FB17CBFA36008F514B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3D966F717D32CB300525FED /* StreamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamTableViewCell.h; sourceTree = "<group>"; };
 		B3D966F817D32CB300525FED /* StreamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamTableViewCell.m; sourceTree = "<group>"; };
+		B3DE682617E3861400DFC2F3 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57.png; path = ../../../57.png; sourceTree = "<group>"; };
+		B3DE682817E3862700DFC2F3 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 114.png; path = ../../../114.png; sourceTree = "<group>"; };
+		B3DE682A17E3863200DFC2F3 /* 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72.png; path = ../../../72.png; sourceTree = "<group>"; };
+		B3DE682C17E3863E00DFC2F3 /* 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 144.png; path = ../../../144.png; sourceTree = "<group>"; };
 		B3E3DBDF17E0C36F0096C5AF /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = Models/Speaker.h; sourceTree = "<group>"; };
 		B3E3DBE017E0C36F0096C5AF /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = Models/Speaker.m; sourceTree = "<group>"; };
 		DF81A4887ED74F5F8459A563 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -182,6 +190,7 @@
 		B3169F4217E36B39002CCA60 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE681D17E385EA00DFC2F3 /* Icons */,
 				B3169F4317E36B39002CCA60 /* Tabs */,
 			);
 			path = Assets;
@@ -346,6 +355,17 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		B3DE681D17E385EA00DFC2F3 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE682C17E3863E00DFC2F3 /* 144.png */,
+				B3DE682A17E3863200DFC2F3 /* 72.png */,
+				B3DE682817E3862700DFC2F3 /* 114.png */,
+				B3DE682617E3861400DFC2F3 /* 57.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,6 +464,10 @@
 				B3169F4917E36B39002CCA60 /* man.png in Resources */,
 				B3169F4A17E36B39002CCA60 /* map-pin.png in Resources */,
 				B3169F4B17E36B39002CCA60 /* twitter.png in Resources */,
+				B3DE682717E3861400DFC2F3 /* 57.png in Resources */,
+				B3DE682917E3862700DFC2F3 /* 114.png in Resources */,
+				B3DE682B17E3863200DFC2F3 /* 72.png in Resources */,
+				B3DE682D17E3863E00DFC2F3 /* 144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
