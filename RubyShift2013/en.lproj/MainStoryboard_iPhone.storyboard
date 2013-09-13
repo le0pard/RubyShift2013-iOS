@@ -81,32 +81,20 @@
         <!--Ruby Shift2013 Talk Details View Controller-->
         <scene sceneID="uWc-Tg-YJt">
             <objects>
-                <viewController id="0Zc-RC-426" customClass="RubyShift2013TalkDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="0Zc-RC-426" customClass="RubyShift2013TalkDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fK0-JG-k02">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-8H-DYw">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="151" id="9O9-J4-Q64"/>
-                                    <constraint firstAttribute="width" constant="150" id="GhO-F9-nm8"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="r6k-8H-DYw" firstAttribute="leading" secondItem="fK0-JG-k02" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QZV-IM-cp9"/>
-                            <constraint firstItem="r6k-8H-DYw" firstAttribute="top" secondItem="fK0-JG-k02" secondAttribute="top" constant="20" symbolic="YES" type="default" id="StR-Yg-Rfd"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rAW-j2-c3v"/>
                     <connections>
-                        <outlet property="speakerPhoto" destination="r6k-8H-DYw" id="jWO-oy-Ixg"/>
+                        <segue destination="QWq-k9-yXe" kind="push" identifier="speakerPressed" id="C3j-Ab-MhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvd-vv-5Ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-204"/>
+            <point key="canvasLocation" x="1689" y="-397"/>
         </scene>
         <!--Navigation Controller - Talks-->
         <scene sceneID="7OY-aR-EHz">
@@ -171,56 +159,20 @@
         <!--Ruby Shift2013 Speaker Details View Controller-->
         <scene sceneID="Xxn-yE-UMq">
             <objects>
-                <viewController id="QWq-k9-yXe" customClass="RubyShift2013SpeakerDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="QWq-k9-yXe" customClass="RubyShift2013SpeakerDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6qN-sn-xTZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knd-aO-wBG">
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Speaker Full name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3j-vS-YQ5">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="HfC-Jh-sih"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="JTG-R1-SFd">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="06e-PX-RMT"/>
-                                            <constraint firstAttribute="height" constant="151" id="jm3-1l-zym"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="o3j-vS-YQ5" firstAttribute="leading" secondItem="Knd-aO-wBG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BN9-Iq-rgC"/>
-                                    <constraint firstItem="o3j-vS-YQ5" firstAttribute="top" secondItem="Knd-aO-wBG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="DuI-GI-HeE"/>
-                                    <constraint firstAttribute="trailing" secondItem="o3j-vS-YQ5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="L5Y-fV-wSF"/>
-                                    <constraint firstAttribute="bottom" secondItem="JTG-R1-SFd" secondAttribute="bottom" constant="251" id="QfQ-xa-42a"/>
-                                    <constraint firstItem="JTG-R1-SFd" firstAttribute="centerX" secondItem="o3j-vS-YQ5" secondAttribute="centerX" type="default" id="deu-jd-uSt"/>
-                                    <constraint firstItem="JTG-R1-SFd" firstAttribute="top" secondItem="o3j-vS-YQ5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tDg-Ng-zKV"/>
-                                    <constraint firstItem="o3j-vS-YQ5" firstAttribute="centerX" secondItem="Knd-aO-wBG" secondAttribute="centerX" type="default" id="xHK-sp-0Rk"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Knd-aO-wBG" firstAttribute="trailing" secondItem="6qN-sn-xTZ" secondAttribute="trailing" type="default" id="87e-Bf-NKM"/>
-                            <constraint firstItem="Knd-aO-wBG" firstAttribute="top" secondItem="6qN-sn-xTZ" secondAttribute="top" type="default" id="Kep-hX-2b1"/>
-                            <constraint firstItem="Knd-aO-wBG" firstAttribute="bottom" secondItem="6qN-sn-xTZ" secondAttribute="bottom" type="default" id="WUb-Yv-F5Q"/>
-                            <constraint firstItem="Knd-aO-wBG" firstAttribute="leading" secondItem="6qN-sn-xTZ" secondAttribute="leading" type="default" id="XEM-HU-jgj"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nLU-iF-jdu"/>
                     <connections>
-                        <outlet property="speakerFullName" destination="o3j-vS-YQ5" id="J4V-G8-REt"/>
-                        <outlet property="speakerPhoto" destination="JTG-R1-SFd" id="Eyp-TR-VEZ"/>
+                        <segue destination="0Zc-RC-426" kind="push" identifier="talkPressed" id="BT2-aE-Cxl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z88-Tb-GAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="463"/>
+            <point key="canvasLocation" x="1689" y="459"/>
         </scene>
         <!--Navigation Controller - Speakers-->
         <scene sceneID="wfn-CM-pdT">
@@ -296,44 +248,14 @@
     <resources>
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
-        <image name="speaker.png" width="507" height="512"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RubyShift2013SpeakerDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakerDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="speakerFullName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speakerPhoto" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="RubyShift2013SpeakersViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakersViewController.h"/>
-        </class>
-        <class className="RubyShift2013StreamViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013StreamViewController.h"/>
-        </class>
-        <class className="RubyShift2013TalkDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalkDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="speakerPhoto" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="RubyShift2013TalksViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalksViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDate:"/>
-            </relationships>
-        </class>
-        <class className="StreamTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StreamTableViewCell.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="BT2-aE-Cxl"/>
+        <segue reference="C3j-Ab-MhG"/>
+    </inferredMetricsTieBreakers>
 </document>

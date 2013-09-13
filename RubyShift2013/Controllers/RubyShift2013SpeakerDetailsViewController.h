@@ -13,7 +13,12 @@
 @interface RubyShift2013SpeakerDetailsViewController : UIViewController
 
 @property (nonatomic, strong) Speaker *speaker;
-@property (strong, nonatomic) IBOutlet UILabel *speakerFullName;
-@property (strong, nonatomic) IBOutlet UIImageView *speakerPhoto;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UILabel *speakerFullName;
+@property (strong, nonatomic) UIImageView *speakerPhoto;
+@property (strong, nonatomic) UILabel *speakerBio;
+@property (strong, nonatomic) NSArray *talkButtons;
+
+- (IBAction)talkPressed:(id)sender;
 
 @end
