@@ -17,6 +17,7 @@
                     <connections>
                         <segue destination="WnF-ws-17Q" kind="relationship" relationship="viewControllers" id="C9Z-Bv-2KY"/>
                         <segue destination="7Gf-NF-2Ek" kind="relationship" relationship="viewControllers" id="o5V-5T-WN1"/>
+                        <segue destination="kF1-PL-Kyb" kind="relationship" relationship="viewControllers" id="Ynv-VI-DIR"/>
                         <segue destination="62H-Dk-WRO" kind="relationship" relationship="viewControllers" id="QIL-yB-TXl"/>
                     </connections>
                 </tabBarController>
@@ -156,6 +157,49 @@
             </objects>
             <point key="canvasLocation" x="1116" y="459"/>
         </scene>
+        <!--Ruby Shift2013 Map View Controller - Map-->
+        <scene sceneID="8Uu-jo-PBD">
+            <objects>
+                <viewController title="Map" id="Ki6-4S-MeB" customClass="RubyShift2013MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Laa-oq-fQg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5v6-nV-jqa"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5v6-nV-jqa" firstAttribute="bottom" secondItem="Laa-oq-fQg" secondAttribute="bottom" type="user" id="QxX-dC-TXH"/>
+                            <constraint firstItem="5v6-nV-jqa" firstAttribute="leading" secondItem="Laa-oq-fQg" secondAttribute="leading" type="default" id="Y2b-7Y-Ylc"/>
+                            <constraint firstItem="5v6-nV-jqa" firstAttribute="trailing" secondItem="Laa-oq-fQg" secondAttribute="trailing" type="default" id="sF2-be-Wsa"/>
+                            <constraint firstItem="5v6-nV-jqa" firstAttribute="top" secondItem="Laa-oq-fQg" secondAttribute="top" type="default" id="wwP-MG-CJc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WrR-ZN-bLm"/>
+                    <connections>
+                        <outlet property="mapView" destination="5v6-nV-jqa" id="PaY-qM-ONs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYk-zx-LIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="1144"/>
+        </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="cHy-yP-q1a">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kF1-PL-Kyb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="second.png" id="ESe-3b-kRd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="61i-Pw-R7P">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ki6-4S-MeB" kind="relationship" relationship="rootViewController" id="hDg-PZ-MWj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cub-vf-4gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="1144"/>
+        </scene>
         <!--Ruby Shift2013 Speaker Details View Controller-->
         <scene sceneID="Xxn-yE-UMq">
             <objects>
@@ -226,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epG-h0-2DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="1145"/>
+            <point key="canvasLocation" x="1096" y="1857"/>
         </scene>
         <!--Navigation Controller - Stream-->
         <scene sceneID="nZ4-MI-GBS">
@@ -242,13 +286,51 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RdU-ZE-T0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="1145"/>
+            <point key="canvasLocation" x="542" y="1857"/>
         </scene>
     </scenes>
     <resources>
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RubyShift2013MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013SpeakerDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakerDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="talkPressed:"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013SpeakersViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013SpeakersViewController.h"/>
+        </class>
+        <class className="RubyShift2013StreamViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013StreamViewController.h"/>
+        </class>
+        <class className="RubyShift2013TalkDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalkDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="speakerPressed:"/>
+            </relationships>
+        </class>
+        <class className="RubyShift2013TalksViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RubyShift2013TalksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+            </relationships>
+        </class>
+        <class className="StreamTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StreamTableViewCell.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
