@@ -241,7 +241,7 @@
         <scene sceneID="3FT-QN-XaL">
             <objects>
                 <navigationController definesPresentationContext="YES" id="x3a-Lc-CPs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stream" image="twitter.png" id="SNY-Na-t82"/>
+                    <tabBarItem key="tabBarItem" title="Stream" image="speaker-electric.png" id="SNY-Na-t82"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g8r-Dz-lkf">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -290,7 +290,7 @@
         <image name="calendar.png" width="29" height="30"/>
         <image name="man.png" width="30" height="30"/>
         <image name="map-pin.png" width="30" height="30"/>
-        <image name="twitter.png" width="30" height="30"/>
+        <image name="speaker-electric.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">

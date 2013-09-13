@@ -51,6 +51,7 @@
 		B39523C417E2C8F200C55651 /* party_place.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C217E2C8F200C55651 /* party_place.png */; };
 		B39523CA17E2CCB300C55651 /* main_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C617E2CCB300C55651 /* main_place@2x.png */; };
 		B39523CC17E2CCB300C55651 /* party_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39523C817E2CCB300C55651 /* party_place@2x.png */; };
+		B3A4FA3B17E39C3E00A16BD9 /* speaker-electric.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */; };
 		B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */; };
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013TalksViewController.m */; };
@@ -132,6 +133,7 @@
 		B39523C217E2C8F200C55651 /* party_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party_place.png; sourceTree = "<group>"; };
 		B39523C617E2CCB300C55651 /* main_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_place@2x.png"; sourceTree = "<group>"; };
 		B39523C817E2CCB300C55651 /* party_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "party_place@2x.png"; sourceTree = "<group>"; };
+		B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker-electric.png"; sourceTree = "<group>"; };
 		B3CB79D517CBEC09008F514B /* RubyShift2013.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RubyShift2013.xcdatamodel; sourceTree = "<group>"; };
 		B3CB79E417CBF1B3008F514B /* RubyShift2013SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakersViewController.h; path = Controllers/RubyShift2013SpeakersViewController.h; sourceTree = "<group>"; };
 		B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakersViewController.m; path = Controllers/RubyShift2013SpeakersViewController.m; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		B3169F4317E36B39002CCA60 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */,
 				B3169F4417E36B39002CCA60 /* calendar.png */,
 				B3169F4517E36B39002CCA60 /* man.png */,
 				B3169F4617E36B39002CCA60 /* map-pin.png */,
@@ -464,6 +467,7 @@
 				B37745DB17E3928000382E30 /* 144.png in Resources */,
 				B37745E017E392FC00382E30 /* party2_place.png in Resources */,
 				B37745E117E392FC00382E30 /* party2_place@2x.png in Resources */,
+				B3A4FA3B17E39C3E00A16BD9 /* speaker-electric.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
