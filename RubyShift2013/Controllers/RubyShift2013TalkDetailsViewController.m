@@ -69,12 +69,14 @@
         [self.scrollView addSubview:self.talkTime];
         
         // talk speaker button
-        [self.speakerFullName addTarget:self action:@selector(speakerPressed:) forControlEvents:UIControlEventTouchDown];
-        [self.speakerFullName setTitle:[[self.talk speaker] valueForKey:@"speakerFullName"] forState:UIControlStateNormal];
-        self.speakerFullName.titleLabel.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
-        [self.speakerFullName.titleLabel setNumberOfLines:1];
-        [self.speakerFullName.titleLabel setFont:[UIFont systemFontOfSize:fontSize + 2]];
-        [self.scrollView addSubview:self.speakerFullName];
+        if ([self.navigationController.viewControllers count] < 3){
+            [self.speakerFullName addTarget:self action:@selector(speakerPressed:) forControlEvents:UIControlEventTouchDown];
+            [self.speakerFullName setTitle:[[self.talk speaker] valueForKey:@"speakerFullName"] forState:UIControlStateNormal];
+            self.speakerFullName.titleLabel.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
+            [self.speakerFullName.titleLabel setNumberOfLines:1];
+            [self.speakerFullName.titleLabel setFont:[UIFont systemFontOfSize:fontSize + 2]];
+            [self.scrollView addSubview:self.speakerFullName];
+        }
         
         //description
         self.talkDescription.lineBreakMode = NSLineBreakByWordWrapping;

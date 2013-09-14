@@ -69,16 +69,18 @@
         //talks
         NSUInteger index = 0;
         NSMutableArray *tmpArray = [NSMutableArray new];
-        for (Talk *talk in self.speaker.talks) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            button.tag = index;
-            index++;
-            [button addTarget:self action:@selector(talkPressed:) forControlEvents:UIControlEventTouchDown];
-            [button setTitle:[talk valueForKey:@"talkTitle"] forState:UIControlStateNormal];
-            button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
-            [button.titleLabel setNumberOfLines:1];
-            [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize + 2]];
-            [tmpArray addObject:button];
+        if ([self.navigationController.viewControllers count] < 3){
+            for (Talk *talk in self.speaker.talks) {
+                UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                button.tag = index;
+                index++;
+                [button addTarget:self action:@selector(talkPressed:) forControlEvents:UIControlEventTouchDown];
+                [button setTitle:[talk valueForKey:@"talkTitle"] forState:UIControlStateNormal];
+                button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping | NSLineBreakByTruncatingTail;
+                [button.titleLabel setNumberOfLines:1];
+                [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize + 2]];
+                [tmpArray addObject:button];
+            }
         }
         
         self.talkButtons = [[NSArray alloc] initWithArray:tmpArray];
@@ -106,10 +108,12 @@
     self.speakerFullName.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 30);
     self.speakerPhoto.frame = CGRectMake(20, 50, 120, 120);
     // talk buttons
-    CGFloat butHeight = 0.0;
-    for (UIButton *button in self.talkButtons){
-        button.frame = CGRectMake(150, 50 + butHeight, self.view.bounds.size.width - 170, 30);
-        butHeight = butHeight + 40;
+    if ([self.talkButtons count] > 0){
+        CGFloat butHeight = 0.0;
+        for (UIButton *button in self.talkButtons){
+            button.frame = CGRectMake(150, 50 + butHeight, self.view.bounds.size.width - 170, 30);
+            butHeight = butHeight + 40;
+        }
     }
     // bio
     CGSize maximumLabelSize = CGSizeMake(self.view.bounds.size.width - 40, FLT_MAX);
