@@ -89,7 +89,7 @@
         double biggestLng  = [[lngs lastObject] doubleValue];
         
         CLLocationCoordinate2D annotationsCenter = CLLocationCoordinate2DMake((biggestLat + smallestLat) / 2, (biggestLng + smallestLng) / 2);
-        MKCoordinateSpan annotationsSpan = MKCoordinateSpanMake((biggestLat - smallestLat), (biggestLng - smallestLng));
+        MKCoordinateSpan annotationsSpan = MKCoordinateSpanMake((biggestLat - smallestLat) + 0.01, (biggestLng - smallestLng) + 0.01);
         MKCoordinateRegion region = MKCoordinateRegionMake(annotationsCenter, annotationsSpan);
         [self.mapView setRegion:region];
     }

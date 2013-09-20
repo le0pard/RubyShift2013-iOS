@@ -104,12 +104,14 @@
     [self setSizeAndPosition];
 }
 
-- (void) setSizeAndPosition {    
-    self.speakerFullName.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 30);
-    self.speakerPhoto.frame = CGRectMake(20, 50, 120, 120);
+- (void) setSizeAndPosition {
+    CGFloat topFloat = 60;
+    
+    self.speakerFullName.frame = CGRectMake(20, topFloat, self.view.bounds.size.width - 40, 30);
+    self.speakerPhoto.frame = CGRectMake(20, topFloat + 30, 120, 120);
     // talk buttons
     if ([self.talkButtons count] > 0){
-        CGFloat butHeight = 0.0;
+        CGFloat butHeight = topFloat;
         for (UIButton *button in self.talkButtons){
             button.frame = CGRectMake(150, 50 + butHeight, self.view.bounds.size.width - 170, 30);
             butHeight = butHeight + 40;
@@ -117,20 +119,12 @@
     }
     // bio
     CGSize maximumLabelSize = CGSizeMake(self.view.bounds.size.width - 40, FLT_MAX);
-    /*
-    NSRange range = NSMakeRange(0, [self.speakerBio.text length]);
-    
-    NSDictionary *attributes = [self.speakerBio.text attributesAtIndex:0 effectiveRange:&range];
-    CGSize boundingBox = [self.speakerBio.text boundingRectWithSize:constraint options:NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
-    
-    CGSize expectedLabelSize = CGSizeMake(ceil(boundingBox.width), ceil(boundingBox.height));
-    */
     CGSize expectedLabelSize = [self.speakerBio.text sizeWithFont:self.speakerBio.font constrainedToSize:maximumLabelSize lineBreakMode:self.speakerBio.lineBreakMode];
-    CGFloat height = 180.0;
+    CGFloat height = topFloat + 160.0;
     self.speakerBio.frame = CGRectMake(20, height, self.view.bounds.size.width - 40, expectedLabelSize.height);
     height = height + expectedLabelSize.height;
     // scroll
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, height + 20);
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, height + 60);
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {

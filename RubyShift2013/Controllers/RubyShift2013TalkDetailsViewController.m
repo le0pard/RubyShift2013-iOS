@@ -100,17 +100,19 @@
         sizePadding = 200;
     }
     
-    self.talkTitle.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 60);
-    self.talkTime.frame = CGRectMake(20, 80, sizePadding, 40);
-    self.speakerFullName.frame = CGRectMake(sizePadding + 40, 80, self.view.bounds.size.width - sizePadding - 60, 40);
+    CGFloat topFloat = 60;
+    
+    self.talkTitle.frame = CGRectMake(20, topFloat, self.view.bounds.size.width - 40, 60);
+    self.talkTime.frame = CGRectMake(20, topFloat + 60, sizePadding, 40);
+    self.speakerFullName.frame = CGRectMake(sizePadding + 40, topFloat + 60, self.view.bounds.size.width - sizePadding - 60, 40);
     // bio
     CGSize maximumLabelSize = CGSizeMake(self.view.bounds.size.width - 40, FLT_MAX);
     CGSize expectedLabelSize = [self.talkDescription.text sizeWithFont:self.talkDescription.font constrainedToSize:maximumLabelSize lineBreakMode:self.talkDescription.lineBreakMode];
-    CGFloat height = 140.0;
+    CGFloat height = topFloat + 120;
     self.talkDescription.frame = CGRectMake(20, height, self.view.bounds.size.width - 40, expectedLabelSize.height);
     height = height + expectedLabelSize.height;
     // scroll
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, height + 20);
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, height + 60);
 }
 
 - (IBAction)speakerPressed:(id)sender {

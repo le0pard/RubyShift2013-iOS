@@ -11,7 +11,7 @@
 
 @interface RubyShift2013MainPlace : NSObject <MKAnnotation>
 
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 // Title and subtitle for use by selection UI.
 @property (nonatomic, copy) NSString *title;

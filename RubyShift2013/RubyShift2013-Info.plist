@@ -12,8 +12,6 @@
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
-			<key>UIPrerenderedIcon</key>
-			<false/>
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>152.png</string>
@@ -24,6 +22,8 @@
 				<string>72.png</string>
 				<string>144.png</string>
 			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
@@ -50,6 +50,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
