@@ -13,8 +13,8 @@
 
 @property CLLocationCoordinate2D coordinate;
 
-@property (weak, nonatomic) NSString *title;
-@property (weak, nonatomic) NSString *subtitle;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *subtitle;
 @property (weak, nonatomic) NSString *icon;
 
 @end

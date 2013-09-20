@@ -442,7 +442,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RubyShift2013;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Alexey Vasyliev";
 			};
 			buildConfigurationList = B333DE53178317B2005C7D48 /* Build configuration list for PBXProject "RubyShift2013" */;
@@ -709,7 +709,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyShift2013/RubyShift2013-Prefix.pch";
 				INFOPLIST_FILE = "RubyShift2013/RubyShift2013-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -725,7 +725,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyShift2013/RubyShift2013-Prefix.pch";
 				INFOPLIST_FILE = "RubyShift2013/RubyShift2013-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "D071CF13-5F7C-4E4E-9C9C-A5699B2F7A71";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D071CF13-5F7C-4E4E-9C9C-A5699B2F7A71";
