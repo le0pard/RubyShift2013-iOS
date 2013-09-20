@@ -117,6 +117,14 @@
     }
     // bio
     CGSize maximumLabelSize = CGSizeMake(self.view.bounds.size.width - 40, FLT_MAX);
+    /*
+    NSRange range = NSMakeRange(0, [self.speakerBio.text length]);
+    
+    NSDictionary *attributes = [self.speakerBio.text attributesAtIndex:0 effectiveRange:&range];
+    CGSize boundingBox = [self.speakerBio.text boundingRectWithSize:constraint options:NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
+    
+    CGSize expectedLabelSize = CGSizeMake(ceil(boundingBox.width), ceil(boundingBox.height));
+    */
     CGSize expectedLabelSize = [self.speakerBio.text sizeWithFont:self.speakerBio.font constrainedToSize:maximumLabelSize lineBreakMode:self.speakerBio.lineBreakMode];
     CGFloat height = 180.0;
     self.speakerBio.frame = CGRectMake(20, height, self.view.bounds.size.width - 40, expectedLabelSize.height);
