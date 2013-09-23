@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
@@ -16,6 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="esW-bc-GwT" kind="relationship" relationship="viewControllers" id="Sur-V1-Cu7"/>
                         <segue destination="Hha-CS-cNl" kind="relationship" relationship="viewControllers" id="nwZ-x9-amr"/>
                         <segue destination="6aM-QX-Wii" kind="relationship" relationship="viewControllers" id="6ZW-AD-Ooo"/>
                         <segue destination="ks5-zw-Tob" kind="relationship" relationship="viewControllers" id="QSR-om-rxf"/>
@@ -25,6 +26,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="735" y="366"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="XB1-gg-VEz">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="esW-bc-GwT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.png" id="y8N-Vk-Isq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W0a-Em-a7w">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pI6-x7-7MT" kind="relationship" relationship="rootViewController" id="FiF-Dc-fnI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T50-Ds-55t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829" y="-1268"/>
+        </scene>
+        <!--View Controller - RubyShift 2013-->
+        <scene sceneID="i3b-Ft-tR9">
+            <objects>
+                <viewController id="pI6-x7-7MT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bbY-Gd-zkc"/>
+                        <viewControllerLayoutGuide type="bottom" id="elM-V0-efn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4v3-pH-i9k">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="main.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGt-5M-UFF">
+                                <rect key="frame" x="20" y="69" width="728" height="278"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="bBe-lD-4v9">
+                                <rect key="frame" x="20" y="355" width="728" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">We are proud to present you 4th annual RubyShift 2013, an independent non-profit conference on Ruby and satellite technologies with accent on making new friends, being inspired, and having fun.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IGt-5M-UFF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4v3-pH-i9k" secondAttribute="leading" constant="20" symbolic="YES" id="1d1-ZK-pez"/>
+                            <constraint firstItem="IGt-5M-UFF" firstAttribute="top" secondItem="bbY-Gd-zkc" secondAttribute="bottom" constant="5" id="QZs-mQ-CnH"/>
+                            <constraint firstAttribute="centerX" secondItem="IGt-5M-UFF" secondAttribute="centerX" id="aQR-rq-Wz5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IGt-5M-UFF" secondAttribute="trailing" constant="20" symbolic="YES" id="bH4-I2-ZDU"/>
+                            <constraint firstAttribute="centerX" secondItem="bBe-lD-4v9" secondAttribute="centerX" id="ga2-Xh-UD8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RubyShift 2013" id="rQ5-hd-8mL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWI-2z-H8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="-1273"/>
         </scene>
         <!--Ruby Shift2013 Talks View Controller-->
         <scene sceneID="uD0-BZ-64c">
@@ -65,7 +121,7 @@
                     <navigationItem key="navigationItem" id="X4d-go-dHE">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6un-h0-HOP">
-                            <rect key="frame" x="230" y="7" width="307" height="31"/>
+                            <rect key="frame" x="231" y="7" width="307" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="27.09"/>
@@ -306,6 +362,8 @@
     </scenes>
     <resources>
         <image name="calendar.png" width="29" height="30"/>
+        <image name="house.png" width="30" height="30"/>
+        <image name="main.png" width="780" height="267"/>
         <image name="man.png" width="30" height="30"/>
         <image name="map-pin.png" width="30" height="30"/>
         <image name="speaker-electric.png" width="30" height="30"/>

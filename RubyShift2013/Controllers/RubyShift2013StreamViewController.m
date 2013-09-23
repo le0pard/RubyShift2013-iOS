@@ -52,7 +52,7 @@
     
     [self.twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
         
-        [self.twitter getSearchTweetsWithQuery:@"#rubyshift" successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
+        [self.twitter getSearchTweetsWithQuery:@"rubyshift" successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
             //NSLog(@"Search data : %@",searchMetadata);
             //NSLog(@"\n\n Status : %@",statuses);
             self.twitterStatuses = statuses;

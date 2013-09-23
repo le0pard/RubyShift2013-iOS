@@ -60,6 +60,8 @@
 		B39C3F9317E3C28D00D9F7BC /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B34444E317E3C0E900D33088 /* Default-Landscape~ipad.png */; };
 		B39C3F9417E3C29400D9F7BC /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B34444E517E3C0E900D33088 /* Default-Portrait~ipad.png */; };
 		B3A4FA3B17E39C3E00A16BD9 /* speaker-electric.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */; };
+		B3B7AB1117F0DE1300E5DCDB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B7AB0F17F0DE1300E5DCDB /* main.png */; };
+		B3B7AB1417F0E1A500E5DCDB /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B7AB1317F0E1A500E5DCDB /* house.png */; };
 		B3CB79D617CBEC09008F514B /* RubyShift2013.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79D417CBEC09008F514B /* RubyShift2013.xcdatamodeld */; };
 		B3CB79E617CBF1B3008F514B /* RubyShift2013SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */; };
 		B3CB79E917CBF1FE008F514B /* RubyShift2013TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB79E817CBF1FE008F514B /* RubyShift2013TalksViewController.m */; };
@@ -152,6 +154,8 @@
 		B39523C617E2CCB300C55651 /* main_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_place@2x.png"; sourceTree = "<group>"; };
 		B39523C817E2CCB300C55651 /* party_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "party_place@2x.png"; sourceTree = "<group>"; };
 		B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker-electric.png"; sourceTree = "<group>"; };
+		B3B7AB0F17F0DE1300E5DCDB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		B3B7AB1317F0E1A500E5DCDB /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		B3CB79D517CBEC09008F514B /* RubyShift2013.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RubyShift2013.xcdatamodel; sourceTree = "<group>"; };
 		B3CB79E417CBF1B3008F514B /* RubyShift2013SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyShift2013SpeakersViewController.h; path = Controllers/RubyShift2013SpeakersViewController.h; sourceTree = "<group>"; };
 		B3CB79E517CBF1B3008F514B /* RubyShift2013SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RubyShift2013SpeakersViewController.m; path = Controllers/RubyShift2013SpeakersViewController.m; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 		B3169F4217E36B39002CCA60 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B3B7AB0F17F0DE1300E5DCDB /* main.png */,
 				B3DE681D17E385EA00DFC2F3 /* Icons */,
 				B3169F4317E36B39002CCA60 /* Tabs */,
 			);
@@ -217,6 +222,7 @@
 		B3169F4317E36B39002CCA60 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B3B7AB1317F0E1A500E5DCDB /* house.png */,
 				B3A4FA3A17E39C3E00A16BD9 /* speaker-electric.png */,
 				B3169F4417E36B39002CCA60 /* calendar.png */,
 				B3169F4517E36B39002CCA60 /* man.png */,
@@ -484,6 +490,8 @@
 				B39523CC17E2CCB300C55651 /* party_place@2x.png in Resources */,
 				B31F18FC17E2E54000827019 /* new_place.png in Resources */,
 				B31F18FD17E2E54000827019 /* new_place@2x.png in Resources */,
+				B3B7AB1417F0E1A500E5DCDB /* house.png in Resources */,
+				B3B7AB1117F0DE1300E5DCDB /* main.png in Resources */,
 				B3169F4817E36B39002CCA60 /* calendar.png in Resources */,
 				B3169F4917E36B39002CCA60 /* man.png in Resources */,
 				B3169F4A17E36B39002CCA60 /* map-pin.png in Resources */,
