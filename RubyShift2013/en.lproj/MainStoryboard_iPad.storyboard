@@ -31,7 +31,7 @@
         <scene sceneID="XB1-gg-VEz">
             <objects>
                 <navigationController definesPresentationContext="YES" id="esW-bc-GwT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.png" id="y8N-Vk-Isq"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_tab.png" id="y8N-Vk-Isq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W0a-Em-a7w">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -227,7 +227,7 @@
         <scene sceneID="qeM-qT-p7z">
             <objects>
                 <navigationController definesPresentationContext="YES" id="ks5-zw-Tob" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map-pin.png" id="HYr-G0-9jw"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map.png" id="HYr-G0-9jw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TY6-jj-K3J">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -315,7 +315,7 @@
         <scene sceneID="3FT-QN-XaL">
             <objects>
                 <navigationController definesPresentationContext="YES" id="x3a-Lc-CPs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stream" image="speaker-electric.png" id="SNY-Na-t82"/>
+                    <tabBarItem key="tabBarItem" title="Stream" image="stream_tab.png" id="SNY-Na-t82"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g8r-Dz-lkf">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -331,7 +331,7 @@
         <scene sceneID="sey-ja-zKP">
             <objects>
                 <navigationController definesPresentationContext="YES" id="6aM-QX-Wii" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speakers" image="man.png" id="Fmx-Te-6gO"/>
+                    <tabBarItem key="tabBarItem" title="Speakers" image="speaker_tab.png" id="Fmx-Te-6gO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Kp-MJ-CqW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -347,7 +347,7 @@
         <scene sceneID="4iF-Pc-9Yp">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Hha-CS-cNl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Talks" image="calendar.png" id="Iuc-9w-NIK"/>
+                    <tabBarItem key="tabBarItem" title="Talks" image="talks_tab.png" id="Iuc-9w-NIK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XIM-w2-oaq">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -361,12 +361,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.png" width="29" height="30"/>
-        <image name="house.png" width="30" height="30"/>
+        <image name="home_tab.png" width="25" height="25"/>
         <image name="main.png" width="780" height="267"/>
-        <image name="man.png" width="30" height="30"/>
-        <image name="map-pin.png" width="30" height="30"/>
-        <image name="speaker-electric.png" width="30" height="30"/>
+        <image name="map.png" width="26" height="26"/>
+        <image name="speaker_tab.png" width="24" height="24"/>
+        <image name="stream_tab.png" width="25" height="23"/>
+        <image name="talks_tab.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

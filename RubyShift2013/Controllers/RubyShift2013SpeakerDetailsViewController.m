@@ -62,7 +62,7 @@
         
         // photo
         [self.speakerPhoto setImageWithURL:[NSURL URLWithString:[[self speaker] valueForKey:@"speakerPhoto"]]
-                          placeholderImage:[UIImage imageNamed:@"speaker.png"]];
+                          placeholderImage:[UIImage imageNamed:@"speaker_icon.png"]];
         [self.speakerPhoto setContentMode:UIViewContentModeScaleAspectFit];
         [self.scrollView addSubview:self.speakerPhoto];
         

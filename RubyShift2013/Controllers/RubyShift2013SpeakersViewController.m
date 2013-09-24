@@ -85,7 +85,8 @@
     
     Speaker *speaker = (Speaker *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [speaker valueForKey:@"speakerFullName"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]] placeholderImage:[UIImage imageNamed:@"speaker.png"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[speaker valueForKey:@"speakerPhoto"]]
+                   placeholderImage:[UIImage imageNamed:@"speaker_icon.png"]];
     
     if ([speaker.talks count] > 0){
             
